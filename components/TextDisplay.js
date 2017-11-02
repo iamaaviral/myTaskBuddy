@@ -13,8 +13,16 @@ class TextDisplay extends Component{
             inputText: 'initial txt'
         }
     }
+
+    handleChange(event) {
+        // console.log("change");
+        // console.log(event.target.value);
+        this.setState({
+            inputText: event.target.value
+        })
+    }
     render(){
-        return <input type="text" placeholder="Enter your Task here" value={this.state.inputText} />
+        return <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
     }
 }
 

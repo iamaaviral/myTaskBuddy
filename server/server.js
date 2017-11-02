@@ -7,7 +7,7 @@ var webpackHotMiddleware=require('webpack-hot-middleware');
 
 var app = express();
 
-var compiler = webpak(config);
+var compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, {noInfo: true,publicPath: config.output.publicPath}))
 app.use(webpackHotMiddleware(compiler));
 
@@ -17,7 +17,7 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-var port = 3001;
+var port = 3000;
 
 app.listen(port, function(error) {
   if (error) throw error;

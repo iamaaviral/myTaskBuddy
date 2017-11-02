@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+import TextInput from './TextInput'
 
 // class App extends Component 
 var App =React.createClass({
@@ -8,7 +8,7 @@ var App =React.createClass({
         return (
         <div>
             <div>App component</div>
-            <TextDisplay />
+            <TextInput />
         </div>
         )
     }

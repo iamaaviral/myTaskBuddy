@@ -2,28 +2,12 @@ import React, {Component} from 'react'
 
 class TextDisplay extends Component{
 
-    // getInitialState(){
-    //     return {
-    //         inputText: 'initial text'
-    //     }
-    // }
-    constructor(props,context){
-        super(props, context)
-        this.state={
-            inputText: 'initial txt'
-        }
-    }
-
-    handleChange(event) {
-        // console.log("change");
-        // console.log(event.target.value);
-        this.setState({
-            inputText: event.target.value
-        })
-    }
     render(){
-        return <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
-    }
+        return (
+              // <div>Display some text</div>
+            <div>{this.props.text}</div>
+            )
+     }
 }
 
 export default TextDisplay

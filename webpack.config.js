@@ -1,4 +1,4 @@
-var path = require('path')
+// var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
@@ -9,6 +9,11 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
     module: {
         loaders: [
             {
@@ -16,7 +21,7 @@ module.exports = {
                 loader: 'babel-loader',
                 excludes: /node_modules/,
                 query: {
-                    presets: ['react','es2015']
+                    presets: ['react','es2015','react-hmre']
                 }
             }
         ]

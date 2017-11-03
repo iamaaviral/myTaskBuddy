@@ -22,12 +22,18 @@ class TextInput extends Component{
             inputText: event.target.value
         })
     }
+
+    handleSubmit(event){
+        event.preventDefault()
+        console.log("submit button is woking?");
+
+    }
     render(){
         return (
         <div>
             <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
            
-            <button>Submit this task</button>
+            <button onClick={this.handleSubmit.bind(this)}>Submit this task</button>
             <hr/>
             {/* <TextDisplay text={this.state.inputText}/> */}
         </div>

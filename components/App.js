@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TextInput from './TextInput'
 import List from './List'
+import {connect} from 'react-redux'
 
 // class App extends Component 
 var App =React.createClass({
@@ -16,4 +17,8 @@ var App =React.createClass({
     }
 })
 
-export default App
+function mapStateToProps(state){
+    return state;
+}
+
+export default connect(mapStateToProps)(App)

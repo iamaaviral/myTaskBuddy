@@ -1,14 +1,15 @@
 function getId(state){
     return state.todos.reduce((maxId,todo) => {
-        return Math.max(todo.is,maxId)
+        return Math.max(todo.id,maxId)
     }, -1) + 1
 }
 
-export default function reducer(state, action){
+let reducer = function(state, action){
     switch (action.type) {
         case 'ADD_TODO':
+        console.log("this.props.dispatch error");
                 //Have used ES6 syntax object.assign
-                Object.assign({}, state, {
+                    return Object.assign({}, state, {
                     todos: [{
                         //add new todo info
                     text: action.text,
@@ -21,3 +22,5 @@ export default function reducer(state, action){
                 return state;
     }
 }
+
+export default reducer

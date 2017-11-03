@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import TextDisplay from './TextDisplay'
+// import TextDisplay from './TextDisplay'
 
 class TextInput extends Component{
 
@@ -11,7 +11,7 @@ class TextInput extends Component{
     constructor(props,context){
         super(props, context)
         this.state={
-            inputText: 'initial txt'
+            inputText: ''
         }
     }
 
@@ -26,8 +26,10 @@ class TextInput extends Component{
         return (
         <div>
             <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
+           
+            <button>Submit this task</button>
             <hr/>
-            <TextDisplay text={this.state.inputText}/>
+            {/* <TextDisplay text={this.state.inputText}/> */}
         </div>
         )
      }

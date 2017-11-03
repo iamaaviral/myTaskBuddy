@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 // import TextDisplay from './TextDisplay'
+import { addTodo} from '../redux/actions'
 
 class TextInput extends Component{
 
@@ -26,7 +27,7 @@ class TextInput extends Component{
     handleSubmit(event){
         event.preventDefault()
         console.log("submit button is woking?");
-
+        this.props.dispatch(addTodo(this.state.inputText))
     }
     render(){
         return (

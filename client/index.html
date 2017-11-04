@@ -3,9 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>React Todo List</title>
+  <!-- <link rel="stylesheet" type="text/css" href="/main.css"> -->
+  <style>
+  body {
+    /* font-family: Montserrat,sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-align: center; */
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.8em;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 500px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-weight: 300;
+    
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 50px;
+  color: red;
+  opacity: 0.1;
+}
+
+ul{
+  display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+     position: relative;
+    z-index: 2;
+    border-top: 1px solid #e6e6e6;
+}
+
+ul li {
+  position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+    list-style-type: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+    #app {
+      background: #fff;
+      margin: 130px 0 40px 0;
+      position: relative;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
 </head>
 <body>
-  <h1>Hey this is aviral!</h1>
+  <h1>ToDo List</h1>
   <div id="app"></div>
   <script src="bundle.js"></script>
 </body>

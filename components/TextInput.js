@@ -32,12 +32,14 @@ class TextInput extends Component{
     render(){
         return (
         <div>
-            <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
-           
-            <button onClick={this.handleSubmit.bind(this)}>Submit this task</button>
-            <hr/>
-            {/* <TextDisplay text={this.state.inputText}/> */}
-        </div>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+                <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
+            
+                <input type="Submit" />
+                <hr/>
+                {/* <TextDisplay text={this.state.inputText}/> */}
+             </form>
+     </div>
         )
      }
 }

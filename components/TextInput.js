@@ -33,10 +33,10 @@ class TextInput extends Component{
         return (
         <div>
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
+                <input className="new-todo" type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)}/>
             
-                <input type="Submit" />
-                <hr/>
+                {/* <input type="Submit" /> */}
+                
                 {/* <TextDisplay text={this.state.inputText}/> */}
              </form>
      </div>

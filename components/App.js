@@ -11,7 +11,7 @@ var App =React.createClass({
         <div>
             <div>ToDo List</div>
             <TextInput dispatch={this.props.dispatch}/>
-            <List todos={this.props.todos}/> 
+            <List dispatch={this.props.dispatch} todos={this.props.todos}/> 
         </div>
         )
     }

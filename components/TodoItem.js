@@ -14,9 +14,10 @@ class TodoiItem extends Component{
     render(){
         return (
             <li>
-               <div> {this.props.todo.text} </div>
-               <button onClick={this.handleComplete.bind(this)}> Mark as completed</button>
-               <button onClick={this.handleDelete.bind(this)} > Delete this todo</button>
+                <input type="checkbox" onClick={this.handleComplete.bind(this)} />
+               <span> {this.props.todo.text} </span>
+              <button onClick={this.handleDelete.bind(this)} >&#x2718;</button>
+               {/* <i className="fa fa-trash" aria-hidden="true" onClick={this.handleDelete.bind(this) > */}
             </li>
           
             )

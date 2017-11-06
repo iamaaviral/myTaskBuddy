@@ -22,6 +22,13 @@ let actions = {
         }
     },
 
+    importantTodo: function(id){
+        return {
+            type : 'IMPORTANT_TODO',
+            id: id
+        }
+    },
+
     deleteTodo: function(id){
        return {
             type : 'DELETE_TODO',

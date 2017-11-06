@@ -8,11 +8,7 @@ import { Provider } from 'react-redux'
 import './style.css'
 
 let initialState = {
-                todos: [{
-                        id: 0,
-                        completed: false,
-                        text: 'Make this Project'
-                }]
+                todos: []
 }
 //configured and created our store
 let store = configureStore(initialState)

@@ -23,6 +23,14 @@ let reducer = function(state, action){
                             return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
                         })
                     })
+        
+        
+          case 'IMPORTANT_TODO':
+                    return Object.assign({},state, {
+                        todos: state.todos.map((todo) => {
+                            return todo.id === action.id ? Object.assign({}, todo, {important : !todo.important}) : todo
+                        })
+                    })
 
         case 'DELETE_TODO':
                     return Object.assign({},state, {

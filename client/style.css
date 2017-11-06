@@ -78,18 +78,22 @@ ul li:hover{
   color: #555;
     text-decoration: none;
     background-color: #f5f5f5;
-    cursor: pointer;
 }
 ul li span {
-  font-size:  30px;
+  font-size:  25px;
   font-family: cursive;
+}
+
+ul li input{
+    cursor:pointer;
 }
 
     #app {
       background: #fff;
       margin: 130px 0 40px 0;
       position: relative;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+      
     }
 
     .new-todo{
@@ -116,7 +120,7 @@ ul li span {
           top:0px;
           bottom: 0px;
           font-size:  15px;
-          background-color: white;
+          background-color: inherit;
           border: none;
           cursor: pointer;
       }
@@ -128,4 +132,9 @@ ul li span {
       .completed {
         opacity: 0.6;
         text-decoration: line-through;
+      }
+
+      .important{
+          background-color: red;
+          transition: 1s;
       }

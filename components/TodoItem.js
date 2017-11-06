@@ -19,11 +19,13 @@ class TodoiItem extends Component{
 
     render(){
         return (
-            <li  className={this.props.todo.important ? 'important' : 'none' }>
+            <li >
                 <input type="checkbox"  onChange={this.handleComplete.bind(this)} />
                <span  className={this.props.todo.completed ? 'completed' : 'none' }> { this.props.todo.text} </span>
-               <button onClick={this.handleImportant.bind(this)} >Important</button>
-              <button onClick={this.handleDelete.bind(this)} >&#x2718;</button>
+               <div className="btn">
+               <button  className={this.props.todo.important ? 'important' : 'imp' } onClick={this.handleImportant.bind(this)} >&#x2764;</button>
+              <button  className="del" onClick={this.handleDelete.bind(this)} >&#x2716;</button>
+              </div>
                {/* <i className="fa fa-trash" aria-hidden="true" onClick={this.handleDelete.bind(this) > */}
             </li>
           

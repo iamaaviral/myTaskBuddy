@@ -114,8 +114,14 @@ ul li input{
         box-sizing: border-box; 
       }
 
-      button{ 
-          position: absolute;
+      
+      .btn{
+       position: absolute;
+       display: inline-block;
+       right: 0px;
+    }
+
+      .del{ 
           right: 0px;
           top:0px;
           bottom: 0px;
@@ -125,8 +131,18 @@ ul li input{
           cursor: pointer;
       }
 
-      button:hover{
+      .del:hover{
         color: #ed5e5e;
+      }
+
+      .imp{
+        right: 0px;
+        top:0px;
+        bottom: 0px;
+        font-size:  20px;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
       }
 
       .completed {
@@ -135,6 +151,14 @@ ul li input{
       }
 
       .important{
-          background-color: red;
+        font-size:  20px;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+         color: red;
           transition: 1s;
+      }
+
+      .imp:focus{
+          border:none;
       }

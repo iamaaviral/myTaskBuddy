@@ -183,7 +183,7 @@ ul li input{
       }
 
       .del:hover{
-        color: #ed5e5e;
+        color: red;
       }
 
       .imp{
@@ -206,7 +206,7 @@ ul li input{
         background-color: inherit;
         border: none;
         cursor: pointer;
-         color: red;
+         color: #ed5e5e;
           transition: 1s;
       }
 

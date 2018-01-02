@@ -1,9 +1,9 @@
 import { createStore ,compose, applyMiddleware} from 'redux'
 import reducer from './reducer'
-import logger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 
 let finalCreateStore = compose(
-    applyMiddleware(logger())
+    applyMiddleware(createLogger())
 )(createStore)
 
 export default function configureStore(initialState){

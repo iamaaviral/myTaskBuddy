@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {browserHistory} from 'react-router-dom';
+import { Route , withRouter} from 'react-router-dom';
 
 class SignUp extends Component {
 constructor(props){
@@ -65,6 +67,8 @@ change = e => {
     return isError;
   };
 
+ 
+ 
   onSubmit = e => {
     e.preventDefault();
     // this.props.onSubmit(this.state);
@@ -84,6 +88,8 @@ change = e => {
         password: "",
         passwordError: ""
       });
+      this.props.history.push('/main');
+      console.log(this.props);
       this.props.onChange({
         firstName: "",
         lastName: "",

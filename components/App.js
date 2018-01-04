@@ -10,7 +10,7 @@ var App =React.createClass({
 
     render(){
         return (
-        <div>
+        <div id ="app">
             <TextInput dispatch={this.props.dispatch}/>
             <List dispatch={this.props.dispatch} todos={this.props.todos}/>
             

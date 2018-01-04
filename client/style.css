@@ -213,3 +213,17 @@ ul li input{
       .imp:focus{
           border:none;
       }
+
+div .form-container{
+    position :relative;
+    border: 1px solid red;
+    clear:both;
+}
+
+.left-form{
+  border-right: 1px solid white;
+}
+
+.form-container .form{
+  /* border: 1px solid red; */
+}

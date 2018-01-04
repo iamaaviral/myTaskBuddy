@@ -28,6 +28,9 @@ class TextInput extends Component{
         event.preventDefault()
         console.log("submit button is woking?");
         this.props.dispatch(actions.addTodo(this.state.inputText))
+        this.setState({
+            inputText: ''
+        })
     }
     render(){
         return (

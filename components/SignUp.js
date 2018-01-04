@@ -114,9 +114,11 @@ change = e => {
   
   render() {
         return (
+          <div className="form-container">
+        <h4>Sign Up</h4>
+        <p>Already registered? <a href="/login">Sign in</a></p>
         <div className="form">
-            <h2>Sign Up</h2>
-            <form>
+           <form>
                     <input type="text" 
                             name="firstName"
                             placeholder="First Name" 
@@ -171,6 +173,7 @@ change = e => {
         <button type="button" onClick={e => this.onSubmit(e)}>Sign Up</button>
             </form>
             {/* <div>{this.state.error.message}</div> */}
+        </div>
         </div>
         )
     }

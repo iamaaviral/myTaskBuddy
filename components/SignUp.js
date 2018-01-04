@@ -112,7 +112,7 @@ change = e => {
             <form>
                     <input type="text" 
                             name="firstName"
-                            palaceholder="First Name" 
+                            placeholder="First Name" 
                             value={this.state.firstName}
                             onChange={e => this.change(e)}
                             // onChange={this.change.bind(this)}
@@ -120,7 +120,7 @@ change = e => {
                             <br/>
                     <input type="text" 
                             name="lastName"
-                            palaceholder="Last Name" 
+                            placeholder="Last Name" 
                             value={this.state.lastName}
                             onChange={e => this.change(e)}
                             // onChange={this.change.bind(this)}
@@ -128,7 +128,7 @@ change = e => {
                             <br/>
                     <input type="text" 
                               name="username"
-                            palaceholder="User Name" 
+                            placeholder="User Name" 
                             value={this.state.username}
                             onChange={e => this.change(e)}
                             // onChange={this.change.bind(this)}
@@ -136,7 +136,7 @@ change = e => {
                             <br/>
                     <input type="text" 
                               name="email"
-                            palaceholder="email" 
+                            placeholder="email" 
                             value={this.state.email}
                             onChange={e => this.change(e)}
                             // onChange={this.change.bind(this)}
@@ -144,7 +144,7 @@ change = e => {
                             <br/>
                     <input type="password" 
                              name="password"
-                            palaceholder="password" 
+                            placeholder="password" 
                             value={this.state.password}
                             onChange={e => this.change(e)}
                             // onChange={this.change.bind(this)}

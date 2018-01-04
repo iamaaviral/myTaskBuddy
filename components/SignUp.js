@@ -102,7 +102,11 @@
       }
       else{
           console.log('This form has errors');
-          
+          // console.log(this);
+          // console.log(e.target);
+          this.setState({
+           email : this.state.emailError
+          });
       }
     };
 

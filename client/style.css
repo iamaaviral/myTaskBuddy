@@ -214,16 +214,6 @@
             border:none;
         }
 
-  div .form-container{
-      position :relative;
-      border: 1px solid red;
-  }
-
-  .left-form{
-    position: relative;
-    border-right: 1px solid white;
-  }
-
   /* SIGN UP CSS */
   *,
   :before,

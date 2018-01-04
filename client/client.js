@@ -9,6 +9,7 @@ import SignUp from '../components/SignUp'
 import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
 import './style.css'
+import Routes from './routes'
 
 let initialState = {
                 todos: []
@@ -18,12 +19,7 @@ let store = configureStore(initialState)
 
 render(
         <Provider store={store}>
-           <Router>
-             <Switch>
-             <Route path="/register" component={SignUp} />
-               <Route path="/main" component={App} />
-             </Switch>
-           </Router>
+          <Routes />
         </Provider>,
         document.getElementById('app')
 )

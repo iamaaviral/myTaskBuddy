@@ -101,6 +101,7 @@ change = e => {
     }
     else{
         console.log('This form has errors');
+        
     }
   };
 

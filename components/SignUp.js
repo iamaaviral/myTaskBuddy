@@ -150,7 +150,8 @@ change = e => {
                             // onChange={this.change.bind(this)}
                             errorText={this.state.passwordError} />
                             <br/> 
-                
+          <a href="#">Sign up with facebook</a>
+                      
       
         <button type="button" onClick={e => this.onSubmit(e)}>Sign Up</button>
             </form>

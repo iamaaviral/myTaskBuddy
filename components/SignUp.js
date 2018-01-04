@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router-dom';
 import { Route , withRouter} from 'react-router-dom';
+import { FacebookLogin } from 'react-facebook-login-component';
 
 class SignUp extends Component {
 constructor(props){
@@ -105,7 +106,13 @@ change = e => {
     }
   };
 
-    render() {
+
+  responseFacebook (response) {
+    console.log(response);
+    //anything else you want to do(save to localStorage)...
+  }
+  
+  render() {
         return (
         <div className="form">
             <h2>Sign Up</h2>
@@ -150,8 +157,16 @@ change = e => {
                             // onChange={this.change.bind(this)}
                             errorText={this.state.passwordError} />
                             <br/> 
-          <a href="#">Sign up with facebook</a>
-                      
+           <FacebookLogin socialId="158761201565558"
+                           language="en_US"
+                           scope="public_profile,email"
+                           responseHandler={this.responseFacebook}
+                           xfbml={true}
+                           fields="id,email,name"
+                           version="v2.5"
+                           className="facebook-login"
+                           buttonText="Login With Facebook"/>
+
       
         <button type="button" onClick={e => this.onSubmit(e)}>Sign Up</button>
             </form>

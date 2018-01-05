@@ -9,57 +9,84 @@
             super(props);
             this.state ={
                 username: "",
-                usernameError: "",
                 password: "",
-                passwordError: "",
                 redirect: false
             }
             this.login = this.login.bind(this);
             this.change = this.change.bind(this);
         }
 
-        login(){
-            // console.log("you clicked login button");
-            if(this.state.username && this.state.password){
-                    this.setState({redirect:true});
-            }
-            else{
-                console.log("empty fields");
-                this.setState({
-                    password : this.state.passwordError
-                  });
-            }
-        }
-
-        validate = () => {
-            let isError = false;
-            const errors = {
-              usernameError: "",
-              passwordError: ""
-            };
-      
-            if (this.state.username.length < 5) {
-              isError = true;
-              errors.usernameError = "Username needs to be atleast 5 characters long";
-            }
-      
-            if (this.state.password.length <= 0) {
-              isError = true;
-              errors.passwordError = "Requires valid password";
-            }
-      
-            this.setState({
-                ...this.state,
-                ...errors
-              });
-      
-            return isError;
-          };
 
         change(e){
             // console.log("onChange working");
             this.setState({[e.target.name]: e.target.value});
+            this.showInputError(e.target.name);
         }
+
+        login(e){
+            e.preventDefault();
+            // console.log("you clicked login button");
+            if(!this.validate()){
+                console.log("empty fields");
+               
+            }
+            else{
+                this.setState({redirect:true});
+                // this.setState({
+                //     password : this.state.passwordError
+                //   });
+            }
+        }
+
+        validate = () => {
+           
+            const inputs = document.querySelectorAll('input');
+            let isFormValid = true;
+
+
+            // if (this.state.username.length < 5) {
+            //   isError = true;
+            //   errors.usernameError = "Username needs to be atleast 5 characters long";
+            // }
+      
+            // if (this.state.password.length <= 0) {
+            //   isError = true;
+            //   errors.passwordError = "Requires valid password";
+            // }
+            inputs.forEach(input => {
+               
+                const isInputValid = this.showInputError(input.name);
+                
+                if (!isInputValid) {
+                  isFormValid = false;
+                }
+              });
+      
+      
+            return isFormValid;
+          };
+
+          showInputError(refName) {
+            const validity = this.refs[refName].validity;
+            const label = document.getElementById(`${refName}Label`).textContent;
+            const error = document.getElementById(`${refName}Error`);
+            const isPassword = refName.indexOf('password') !== -1;
+           
+                
+            if (!validity.valid) {
+              if (validity.valueMissing) {
+                error.textContent = `${label} is a required field`; 
+              } else if (validity.typeMismatch) {
+                error.textContent = `${label} should be a valid email address`; 
+              } else if (isPassword && validity.patternMismatch) {
+                error.textContent = `${label} should be longer than 4 chars`; 
+              } 
+              return false;
+            }
+            
+            error.textContent = '';
+            return true;
+          }
 
 
         render() {
@@ -73,16 +100,20 @@
                 <form>
             
             <div className="group">
-        <input type="text"   name="username"
+        <input type="text"   name="username"  ref="username"
                                 onChange={e => this.change(e)}
                                 required="required"/><span className="highlight"></span><span className="bar"></span>
-        <label>Username</label>
+        <label id="usernameLabel">Username</label>
+        <div className="error" id="usernameError" />
         </div>
         <div className="group">
-        <input type="password"  name="password"
+        <input type="password"  name="password"  ref="password"
+                                ref="password" pattern=".{5,}"
+                                value={ this.state.password }
                                 onChange={e => this.change(e)}
                                 required="required"/><span className="highlight"></span><span className="bar"></span>
-        <label>Password</label>
+        <label id="passwordLabel">Password</label>
+        <div className="error" id="passwordError" />
         </div>
         <div className="btn-box">
         <button className="button btn-submit"  onClick={e => this.login(e)} type="submit">login</button>

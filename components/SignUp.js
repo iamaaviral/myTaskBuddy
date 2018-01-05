@@ -23,6 +23,8 @@
           password: "",
           passwordError: ""
       }
+      this.onSubmit = this.onSubmit.bind(this);
+      this.change = this.change.bind(this);
   }
 
 
@@ -91,23 +93,29 @@
         });
         this.props.history.push('/main');
         console.log(this.props);
-        this.props.onChange({
-          firstName: "",
-          lastName: "",
-          username: "",
-          email: "",
-          password: ""
-        });
+        // this.props.onChange({
+        //   firstName: "",
+        //   lastName: "",
+        //   username: "",
+        //   email: "",
+        //   password: ""
+        // });
         console.log('no errors');
       }
       else{
           console.log('This form has errors');
-          // console.log(this);
-          // console.log(e.target);
+          console.log(this);
+          // console.log(this.state.errorText);
+          // console.log(this.state.value);
+          //  console.log(e.target);
+          console.log(this.props);
+      //     // this.setState({
+      //     //  email : this.state.emailError
+      //     // });
           this.setState({
-           email : this.state.emailError
+            email : this.state.emailError
           });
-      }
+       }
     };
 
 

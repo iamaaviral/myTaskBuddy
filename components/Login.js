@@ -15,7 +15,7 @@
                 redirect: false
             }
             this.login = this.login.bind(this);
-            this.onChange = this.onChange.bind(this);
+            this.change = this.change.bind(this);
         }
 
         login(){
@@ -25,10 +25,38 @@
             }
             else{
                 console.log("empty fields");
+                this.setState({
+                    password : this.state.passwordError
+                  });
             }
         }
 
-        onChange(e){
+        validate = () => {
+            let isError = false;
+            const errors = {
+              usernameError: "",
+              passwordError: ""
+            };
+      
+            if (this.state.username.length < 5) {
+              isError = true;
+              errors.usernameError = "Username needs to be atleast 5 characters long";
+            }
+      
+            if (this.state.password.length <= 0) {
+              isError = true;
+              errors.passwordError = "Requires valid password";
+            }
+      
+            this.setState({
+                ...this.state,
+                ...errors
+              });
+      
+            return isError;
+          };
+
+        change(e){
             // console.log("onChange working");
             this.setState({[e.target.name]: e.target.value});
         }

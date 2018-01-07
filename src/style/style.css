@@ -147,6 +147,12 @@
       border-radius: 10px;
       }
 
+      #root {
+        margin: 130px 0 40px 0;
+        position: relative;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5),0px 1px 1px -3px rgba(0, 0, 0, 0.5), 0px 2px 2px -6px rgba(0, 0, 0, 0.5);
+         border-radius: 10px;
+      }
       .new-todo{
           background: rgba(0, 0, 0, 0.003);
           position: relative;
@@ -222,7 +228,7 @@
             box-sizing: border-box;
   }
 
-  form {
+ .wrapper form {
     width: 320px;
     margin: 45px auto;
   }
@@ -236,7 +242,7 @@
     resize: none;
   }
 
-  input{
+  .group input{
     background: none;
     color: #c6c6c6;
     font-size: 18px;

@@ -8,9 +8,12 @@ module.exports = {
         './src/index.js'
     ],
     output: {
-        path: require("path").resolve("./dist"),
-        filename: 'bundle.js',
-        publicPath: '/'
+        // path: require("path").resolve("./dist"),
+        // filename: 'bundle.js',
+        // publicPath: '/'
+        path: __dirname,
+        publicPath: '/',
+        filename: 'bundle.js'
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
@@ -24,13 +27,20 @@ module.exports = {
                 loader: "style-loader!css-loader" 
             },
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
-                excludes: /node_modules/,
+                exclude: /node_modules/,
                 query: {
-                    presets: ['react','es2015','react-hmre','stage-0']
+                    presets: ['es2015','react','react-hmre','stage-0']
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './'
     }
 }

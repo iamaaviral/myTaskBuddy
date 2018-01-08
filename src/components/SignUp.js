@@ -122,8 +122,6 @@
       
       render() {
             return (
-              <div>
-          
             <div className="wrapper">
               <form>
               
@@ -188,7 +186,6 @@
             <p>Already registered? <a href="/login">Sign in</a></p>
                 </form>
                 {/* <div>{this.state.error.message}</div> */}
-            </div>
             </div>
             )
         }

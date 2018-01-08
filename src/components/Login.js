@@ -93,8 +93,7 @@ class Login extends Component {
             return (<Redirect to={'/main'} />)
         }
         return (
-            <div className="form">
-                <h2>Login</h2>
+            <div className="wrapper">
                 <form>
 
                     <div className="group">

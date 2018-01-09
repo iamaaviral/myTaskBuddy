@@ -182,7 +182,6 @@
                               className="button btn-submit facebook-login"
                               buttonText="Login With Facebook"/>
           </div>
-          <h4>Sign Up</h4>
             <p>Already registered? <a href="/login">Sign in</a></p>
                 </form>
                 {/* <div>{this.state.error.message}</div> */}

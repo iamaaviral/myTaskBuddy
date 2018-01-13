@@ -11,7 +11,6 @@ var app = express();
 var compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, {noInfo: true,publicPath: config.output.publicPath}))
 app.use(webpackHotMiddleware(compiler));
-
 app.use(express.static(__dirname));
 
 // app.use('/', function (req, res) {
@@ -26,6 +25,5 @@ app.get('*', (req, res) => {
 //   if (error) throw error;
 //   console.log("Express server listening on port", port);
 // });
-
 app.listen(port);
 console.log("Express server listening on port", port);

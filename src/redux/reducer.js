@@ -14,6 +14,7 @@ let reducer = function(state, action){
                         //add new todo info
                     text: action.text,
                     completed: false,
+                    important: false,
                     id: getId(state)
                     }, ...state.todos]
                 })

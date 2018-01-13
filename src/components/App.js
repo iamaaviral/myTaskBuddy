@@ -8,6 +8,8 @@ import {connect} from 'react-redux'
 // class App extends Component 
 var App =React.createClass({
 
+    
+
     render(){
         return (
         <div>
@@ -15,6 +17,9 @@ var App =React.createClass({
          <div id ="app">
             <TextInput dispatch={this.props.dispatch}/>
             <List dispatch={this.props.dispatch} todos={this.props.todos}/>
+            <p>Total no of itmes are: {this.props.todos.length}</p> 
+            <p>Total no of completed items are itmes are: {this.props.todos.filter((todo) => { return todo.completed}).length}</p> 
+            <p>Total no of itmes important: {this.props.todos.filter((todo) => { return todo.important}).length}</p> 
             </div>
         </div>
         )

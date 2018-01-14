@@ -26,11 +26,15 @@ class TextInput extends Component{
 
     handleSubmit(event){
         event.preventDefault()
-        console.log("submit button is woking?");
-        this.props.dispatch(actions.addTodo(this.state.inputText))
-        this.setState({
-            inputText: ''
-        })
+        // console.log("submit button is woking?");
+        if(this.state.inputText !== ""){
+                // console.log("no input");
+                this.props.dispatch(actions.addTodo(this.state.inputText))
+                this.setState({
+                    inputText: ''
+                })
+        
+      }
     }
     render(){
         return (

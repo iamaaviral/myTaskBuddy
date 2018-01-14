@@ -21,7 +21,7 @@ class TodoiItem extends Component{
         return (
             <li >
                 <input type="checkbox"  onChange={this.handleComplete.bind(this)} />
-               <span  className={this.props.todo.completed ? 'completed' : 'none' }>{this.props.todo.text}</span>
+               <span  className={this.props.todo.completed ? 'completed' : '' }>{this.props.todo.text}</span>
                <div className="btn">
                <button  className={this.props.todo.important ? 'important' : 'imp' } onClick={this.handleImportant.bind(this)} >&#x2764;</button>
               <button  className="del" onClick={this.handleDelete.bind(this)} >&#x2716;</button>

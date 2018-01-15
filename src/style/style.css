@@ -15,11 +15,11 @@
       -webkit-font-smoothing: antialiased;
       -moz-font-smoothing: antialiased;
       font-weight: 300;
-      /* width: 100wh;
-    height: 100wh; */
+      /* width: 100wh; */
+    height: 100 vh; 
       background: linear-gradient(-45deg, #E73C7E, #23A6D5);
       /* background: linear-gradient(-45deg,#070000 ,#4C0001); */
-    background-size: 200%;
+    /* background-size: 200%; */
     /* -webkit-animation: Gradient 30s ease infinite;
     -moz-animation: Gradient 30s ease infinite;
     animation: Gradient 30s ease infinite; */

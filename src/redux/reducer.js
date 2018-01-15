@@ -7,9 +7,9 @@ function getId(state){
 let reducer = function(state, action){
     switch (action.type) {
         case 'ADD_TODO':
-                 console.log("this.props.dispatch error");
+                //  console.log("this.props.dispatch error");
                 //Have used ES6 syntax object.assign
-                    return Object.assign({}, state, {
+                    return Object.assign({},state,{
                     todos: [{
                         //add new todo info
                     text: action.text,

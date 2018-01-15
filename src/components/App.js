@@ -24,7 +24,7 @@ var App =React.createClass({
          <h2>To-Do App!</h2>
          <div id ="app">
             <TextInput dispatch={this.props.dispatch}/>
-            <List dispatch={this.props.dispatch} todos={this.props.todos}/>
+            <List dispatch={this.props.dispatch} todos={this.props.todos} filter={this.props.filter}/>
             <Filter dispatch={this.props.dispatch} onFilter={this.filterItem} filter={this.props.filter}/>
             </div>
         </div>

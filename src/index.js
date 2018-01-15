@@ -10,7 +10,9 @@ import './style/style.css'
 import Routes from './routes'
 
 let initialState = {
-                todos: []
+                todos: [],
+                filter:[{keyword:'',Status:"SHOW_ALL"}],
+                selectedCatelog:"0"
 }
 //configured and created our store
 let store = configureStore(initialState)

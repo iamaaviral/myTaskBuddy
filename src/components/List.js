@@ -23,10 +23,10 @@
     var List = React.createClass({
     render: function() {
 			
-        var createItem = function(itemText,i,todo) {
+        var createItem = function(itemText,i) {
         
             return (
-                <TodoItem dispatch={this.props.dispatch} key={todo.id}>{itemText}</TodoItem>
+                <TodoItem key={allitems.i}>{itemText}</TodoItem>
             );
         };
         var allitems = this.props.todos;

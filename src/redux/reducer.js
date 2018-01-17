@@ -1,5 +1,5 @@
 function getId(state){
-    return state.Todo[state.selectedCatelog].todos.reduce((maxId,todo) => {
+    return state.Todo[state.selectedCategory].todos.reduce((maxId,todo) => {
         return Math.max(todo.id,maxId)
     }, -1) + 1
 }
@@ -24,13 +24,13 @@ let reducer = function(state, action){
                             completed: false,
                             important: false,
                             id: getId(state)
-                            }, ...state.Todo[state.selectedCatelog].todos]
+                            }, ...state.Todo[state.selectedCategory].todos]
                     }, ...state.Todo]
                 })
         case 'COMPLETE_TODO':
                     return Object.assign({},state, {
                        Todo:[{
-                        todos: state.Todo[state.selectedCatelog].todos.map((todo) => {
+                        todos: state.Todo[state.selectedCategory].todos.map((todo) => {
                             return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
                         })
                        }]
@@ -40,7 +40,7 @@ let reducer = function(state, action){
           case 'IMPORTANT_TODO':
                     return Object.assign({},state, {
                         Todo:[{
-                            todos: state.Todo[state.selectedCatelog].todos.map((todo) => {
+                            todos: state.Todo[state.selectedCategory].todos.map((todo) => {
                                 return todo.id === action.id ? Object.assign({}, todo, {important : !todo.important}) : todo
                             })
                          }]
@@ -48,9 +48,10 @@ let reducer = function(state, action){
 
         case 'DELETE_TODO':
                     return Object.assign({},state, {
-                        todos: state.todos.filter((todo) => {
+                       Todo:[{ todos: state.Todo[state.selectedCategory].todos.filter((todo) => {
                             return todo.id !== action.id
-                        })
+                            })
+                        }]
                     })
 
         default: 

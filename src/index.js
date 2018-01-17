@@ -18,7 +18,7 @@ let initialState = {
                     }
                 ],
                 filter:[{keyword:'',Status:"SHOW_ALL"}],
-                selectedCatelog:"0"
+                selectedCategory:"0"
 }
 //configured and created our store
 let store = configureStore(initialState)

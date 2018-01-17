@@ -10,7 +10,13 @@ import './style/style.css'
 import Routes from './routes'
 
 let initialState = {
-                todos: [],
+
+                Todo: [
+                  {
+                    name:"primary",
+                    todos:[]
+                    }
+                ],
                 filter:[{keyword:'',Status:"SHOW_ALL"}],
                 selectedCatelog:"0"
 }

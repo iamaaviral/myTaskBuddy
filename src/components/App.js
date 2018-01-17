@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import TextInput from './TextInput'
 import List from './List'
-import Filter from './filter/Filter'
+import Filter from './Filter'
+import Category from './Category'
 import {connect} from 'react-redux'
 
 
@@ -25,7 +26,8 @@ var App =React.createClass({
          <div id ="app">
             <TextInput dispatch={this.props.dispatch}/>
             <List dispatch={this.props.dispatch} todos={this.props.todos} filter={this.props.filter}/>
-            <Filter dispatch={this.props.dispatch} onFilter={this.filterItem} filter={this.props.filter}/>
+            <Category/>
+            <Filter dispatch={this.props.dispatch} todos={this.props.todos} onFilter={this.filterItem} filter={this.props.filter}/>
             </div>
         </div>
         )

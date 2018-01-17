@@ -21,7 +21,7 @@ class TodoiItem extends Component{
 
     render(){
         return (
-            <li  >
+            <li data-id={this.props.value} key={this.props.value} >
                <span  onClick={this.handleComplete.bind(this)} className={this.props.children.completed ? 'completed' : '' }>{this.props.children.text}</span>
                <div className="btn">
                <button  className={this.props.children.important ? 'important' : 'imp' } onClick={this.handleImportant.bind(this)} >&#x2764;</button>

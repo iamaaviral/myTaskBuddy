@@ -15,10 +15,14 @@ let initialState = {
                   {
                     name:"primary",
                     todos:[]
-                    }
+                    },
+                    {
+                      name:"Secondary",
+                      todos:[]
+                      }
                 ],
                 filter:[{keyword:'',Status:"SHOW_ALL"}],
-                selectedCategory:"0"
+                selectedCategory:"1"
 }
 //configured and created our store
 let store = configureStore(initialState)

@@ -18,7 +18,12 @@ var App =React.createClass({
         });
     },
     
-
+    setSelectedCatalog: function(index){
+        this.props.selectedCategory = index;
+        this.setState({
+            selectedCategory: index
+        });
+    },
     render(){
         return (
         <div>
@@ -26,7 +31,7 @@ var App =React.createClass({
          <div id ="app">
             <TextInput dispatch={this.props.dispatch}/>
             <List dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter}/>
-            <Category/>
+            <Category selectedID = {this.props.selectedCatelog} onSelected={this.setSelectedCatalog} todos = {this.props.Todo}/>
             <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem} filter={this.props.filter}/>
             </div>
         </div>

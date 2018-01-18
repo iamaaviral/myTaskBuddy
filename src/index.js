@@ -22,7 +22,7 @@ let initialState = {
                       }
                 ],
                 filter:[{keyword:'',Status:"SHOW_ALL"}],
-                selectedCategory:"1"
+                selectedCategory:"0"
 }
 //configured and created our store
 let store = configureStore(initialState)

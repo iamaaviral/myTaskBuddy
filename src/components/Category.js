@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-
+import actions from '../redux/actions'
 
 // class Category extends Component{
 
@@ -15,8 +15,12 @@ import {connect} from 'react-redux'
 
 var Category  = React.createClass({
 		
-    changeTodo : function(e){
-        this.props.onSelected( e.currentTarget.dataset.id);
+    // changeTodo : function(e){
+    //     this.props.onSelected( e.currentTarget.dataset.id);
+    // },
+    handleCategory(event){
+        console.log(event);
+        this.props.dispatch(actions.changeCategory(event.currentTarget.dataset.id))
     },
     render: function(){	
     
@@ -27,7 +31,7 @@ var Category  = React.createClass({
             allitems.map(function(item,i){ 
             return(
         
-                 <a href="#" key={i} data-id={i} onClick={this.changeTodo} >
+                 <a href="#" key={i} data-id={i} onClick={this.handleCategory} >
                          <span >{item.todos.length}</span>{item.name}
                 </a>
             )

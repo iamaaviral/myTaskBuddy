@@ -34,6 +34,13 @@ let actions = {
             type : 'DELETE_TODO',
             id: id
        }
+    },
+
+    changeCategory: function(id){
+        return {
+            type : 'CHANGE_CATEGORY',
+            payload: id
+        }
     }
 }
 

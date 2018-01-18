@@ -52,7 +52,9 @@ let reducer = function(state, action){
                         return Object.assign({},state, {
                             state : {newtodo, ...state }
                     })
-
+         case 'CHANGE_CATEGORY':
+                        state.selectedCategory = action.payload;
+                    
         default: 
                 return state;
     }

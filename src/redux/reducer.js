@@ -7,53 +7,61 @@ function getId(state){
 let reducer = function(state, action){
     switch (action.type) {
         case 'ADD_TODO':
-                var item = {text: action.text,
-                                completed: false,
-                                important: false,
-                                id: getId(state)};
+            var item = {text: action.text,
+                            completed: false,
+                            important: false,
+                            id: getId(state)};
 		
-                var newtodo = state.Todo;
-                // console.log(newtodo);
-                var allItems = state.Todo[state.selectedCategory].todos.concat([item]);
-                // console.log(allItems);
-                newtodo[state.selectedCategory].todos = allItems;
-                return Object.assign({},state, {
-                     state : {newtodo, ...state }
-                })
+            var newtodo = state.Todo;
+            // console.log(newtodo);
+            var allItems = state.Todo[state.selectedCategory].todos.concat([item]);
+            // console.log(allItems);
+             newtodo[state.selectedCategory].todos = allItems;
+             return Object.assign({},state, {
+                 state : {newtodo, ...state }
+            })
         case 'COMPLETE_TODO':
-                        var newtodo = state.Todo;
-                        var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
-                            return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
-                        });
-                        newtodo[state.selectedCategory].todos = allItems;
-
-                        return Object.assign({},state, {
-                            state : {newtodo, ...state }
-                    })
+            var newtodo = state.Todo;
+            var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
+                return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
+            });
+            newtodo[state.selectedCategory].todos = allItem
+            return Object.assign({},state, {
+                state : {newtodo, ...state }
+             })
         
-          case 'IMPORTANT_TODO':
-                        var newtodo = state.Todo;
-                        var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
-                            return todo.id === action.id ? Object.assign({}, todo, {important : !todo.important}) : todo
-                        });
-                        newtodo[state.selectedCategory].todos = allItems;
-
-                        return Object.assign({},state, {
-                            state : {newtodo, ...state }
-                    })
+        case 'IMPORTANT_TODO':
+            var newtodo = state.Todo;
+            var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
+                return todo.id === action.id ? Object.assign({}, todo, {important : !todo.important}) : todo
+            });
+            newtodo[state.selectedCategory].todos = allItem
+            return Object.assign({},state, {
+                state : {newtodo, ...state }
+            })
 
         case 'DELETE_TODO':
-                        var newtodo = state.Todo;
-                        var allItems = state.Todo[state.selectedCategory].todos.filter((todo) => {
-                            return todo.id !== action.id
-                        })
-                        newtodo[state.selectedCategory].todos = allItems;
+            var newtodo = state.Todo;
+            var allItems = state.Todo[state.selectedCategory].todos.filter((todo) => {
+                return todo.id !== action.id
+            })
+            newtodo[state.selectedCategory].todos = allItem
+            return Object.assign({},state, {
+                state : {newtodo, ...state }
+        })
+        
+        case 'ADD_CATEGORY':
+            var Category = {todos:[],name:action.text};
+            var newtodo = state.Todo.concat([Category]);
+            return Object.assign({},state,{
+                Todo : newtodo 
+            })
 
-                        return Object.assign({},state, {
-                            state : {newtodo, ...state }
-                    })
          case 'CHANGE_CATEGORY':
-                        state.selectedCategory = action.payload;
+            return Object.assign({},state, {
+                selectedCategory : action.payload
+        })
+        
                     
         default: 
                 return state;

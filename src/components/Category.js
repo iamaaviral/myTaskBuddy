@@ -19,7 +19,7 @@ var Category  = React.createClass({
     //     this.props.onSelected( e.currentTarget.dataset.id);
     // },
     handleCategory(event){
-        console.log(event);
+        // console.log(event);
         this.props.dispatch(actions.changeCategory(event.currentTarget.dataset.id))
     },
     render: function(){	
@@ -31,9 +31,9 @@ var Category  = React.createClass({
             allitems.map(function(item,i){ 
             return(
         
-                 <a href="#" key={i} data-id={i} onClick={this.handleCategory} >
+                <li key={i}> <a href="#"  data-id={i} onClick={this.handleCategory} >
                          <span >{item.todos.length}</span>{item.name}
-                </a>
+                </a></li>
             )
         },this)}</div>;
     }

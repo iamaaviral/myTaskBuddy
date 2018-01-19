@@ -36,6 +36,13 @@ let actions = {
        }
     },
 
+    addCategory: function(text){
+        return {
+            type : "ADD_CATEGORY",
+            text: text
+        }
+    },
+
     changeCategory: function(id){
         return {
             type : 'CHANGE_CATEGORY',

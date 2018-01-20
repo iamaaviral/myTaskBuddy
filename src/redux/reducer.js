@@ -22,10 +22,14 @@ let reducer = function(state, action){
             })
         case 'COMPLETE_TODO':
             var newtodo = state.Todo;
+            console.log(state.Todo[state.selectedCategory].todos);
+            console.log(action.id);
+            console.log(action.id);
             var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
                 return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
             });
-            newtodo[state.selectedCategory].todos = allItem
+            console.log(allItems);
+            newtodo[state.selectedCategory].todos = allItems
             return Object.assign({},state, {
                 state : {newtodo, ...state }
              })
@@ -35,7 +39,7 @@ let reducer = function(state, action){
             var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
                 return todo.id === action.id ? Object.assign({}, todo, {important : !todo.important}) : todo
             });
-            newtodo[state.selectedCategory].todos = allItem
+            newtodo[state.selectedCategory].todos = allItems
             return Object.assign({},state, {
                 state : {newtodo, ...state }
             })
@@ -45,7 +49,7 @@ let reducer = function(state, action){
             var allItems = state.Todo[state.selectedCategory].todos.filter((todo) => {
                 return todo.id !== action.id
             })
-            newtodo[state.selectedCategory].todos = allItem
+            newtodo[state.selectedCategory].todos = allItems
             return Object.assign({},state, {
                 state : {newtodo, ...state }
         })

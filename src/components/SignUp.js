@@ -130,7 +130,7 @@
                                 value={this.state.firstName}
                                 onChange={e => this.change(e)}
                                 // onChange={this.change.bind(this)}
-                                required="required"/><span className="highlight"></span><span className="bar"></span>
+                                required="required"/><span className="bar"></span>
           <label id="firstnameLabel"> First Name</label>
           <div className="error" id="firstnameError" />
         </div>
@@ -139,7 +139,7 @@
                                   value={this.state.lastName}
                                   onChange={e => this.change(e)}
                                   // onChange={this.change.bind(this)}
-                                  required="required"/><span className="highlight"></span><span className="bar"></span>
+                                  required="required"/><span className="bar"></span>
             <label id="lastnameLabel">Last Name</label>
             <div className="error" id="lastnameError" />
           </div>
@@ -147,7 +147,7 @@
           <input type="text" name="username" ref="username"
           value={this.state.username}
               onChange={e => this.change(e)}
-              required="required" /><span className="highlight"></span><span className="bar"></span>
+              required="required" /><span className="bar"></span>
           <label id="usernameLabel">Username</label>
           <div className="error" id="usernameError" />
       </div>
@@ -156,7 +156,7 @@
                                 value={this.state.email}
                                 onChange={e => this.change(e)}
                                 // onChange={this.change.bind(this)}
-                                required="required"/><span className="highlight"></span><span className="bar"></span>
+                                required="required"/><span className="bar"></span>
           <label id="emailLabel">Email</label>
           <div className="error" id="emailError" />
         </div>
@@ -165,7 +165,7 @@
             pattern=".{5,}"
             value={this.state.password}
             onChange={e => this.change(e)}
-            required="required" /><span className="highlight"></span><span className="bar"></span>
+            required="required" /><span className="bar"></span>
         <label id="passwordLabel">Password</label>
         <div className="error" id="passwordError" />
     </div>

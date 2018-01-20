@@ -99,7 +99,7 @@ class Login extends Component {
                     <div className="group">
                         <input type="text" name="username" ref="username"
                             onChange={e => this.change(e)}
-                            required="required" /><span className="highlight"></span><span className="bar"></span>
+                            required="required" /><span className="bar"></span>
                         <label id="usernameLabel">Username</label>
                         <div className="error" id="usernameError" />
                     </div>
@@ -108,7 +108,7 @@ class Login extends Component {
                             pattern=".{5,}"
                             value={this.state.password}
                             onChange={e => this.change(e)}
-                            required="required" /><span className="highlight"></span><span className="bar"></span>
+                            required="required" /><span className="bar"></span>
                         <label id="passwordLabel">Password</label>
                         <div className="error" id="passwordError" />
                     </div>

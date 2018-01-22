@@ -9,6 +9,7 @@ body {
       font-weight: 300;
       background: linear-gradient(-45deg, #E73C7E, #23A6D5);
       background-attachment: fixed;
+      overflow-y: hidden;
       /* max-width: 500px; 
       width: 100wh;
       height: 100 vh; 
@@ -212,6 +213,7 @@ h2 {
     margin: 0px 0 40px 0;
     display:flex;
     border-radius: 10px;
+    height:545px;
    /* background: #fff; */
    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.5), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.5);*/
    /* justify-content: space-between; */
@@ -220,7 +222,6 @@ h2 {
 /* <!-----------left-side-bar----------------------> */
 
 #app .left-side-bar{
-   height: 100%;
     z-index: 1;
     left: 0;
     background-color: #111;
@@ -231,9 +232,18 @@ h2 {
 #app .right-side-bar{
     margin:0 auto;
     width:80%;
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);         */
+    /* border: 1px solid red; */
+  }
+#app .right-side-bar .main{
+    max-height:95%;
+    /* border:1px solid red; */
+    overflow:auto;
+    /* overflow:auto; */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);        
     /* border: 1px solid red; */
   }
+
 
 .new-todo{
     background: rgba(0, 0, 0, 0.003);
@@ -283,13 +293,11 @@ h2 {
     -webkit-margin-end: 0px;
     position: relative;
     z-index: 2;
-    border-top: 1px solid #e6e6e6;
   }
 
 #app ul li {
     position: relative;
     font-size: 18px;
-    border-bottom: 1px solid #ededed;
     display: list-item;
     padding: 10px;
     border-radius: 10px;

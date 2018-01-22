@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import actions from '../redux/actions'
-
 import {connect} from 'react-redux'
 
 class TodoiItem extends Component{
@@ -34,10 +33,10 @@ class TodoiItem extends Component{
      }
 }
 
-function mapStateToProps(state){
-    return state;
-}
+// function mapStateToProps(state){
+//     return state;
+// }
 
-export default connect(mapStateToProps)(TodoiItem)
+// export default connect(mapStateToProps)(TodoiItem)
 
-// export default TodoiItem
+export default TodoiItem

@@ -33,8 +33,10 @@ var App =React.createClass({
                 <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem} filter={this.props.filter}/>
              </div>
             <div className="right-side-bar">
-                <TextInput dispatch={this.props.dispatch}/>
-                <List dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter}/>
+                <div className="main">
+                    <TextInput dispatch={this.props.dispatch}/>
+                    <List dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter}/>
+                </div>
             </div>
          </div>
         </div>

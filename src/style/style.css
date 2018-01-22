@@ -36,12 +36,35 @@ body {
     }
   } */
 
-  
-#root {
-    /* margin: 130px 0 40px 0; */
-    position: relative;
-    border-radius: 10px;
-  }
+
+header ul{
+  padding: 10px;
+  margin: 0 0 10px 0px;
+  background:rgba(0,0,0,0.5);
+  /* border: 1px solid red; */
+  text-align: right;
+}
+header li{
+  display: inline;
+  padding: 0px 10px 0px 10px;
+  /* border: 1px solid red; */
+  background-color: transparent;
+}
+
+header li:hover{
+  background-color: transparent;
+}
+
+header ul li a{
+  color:white;
+  text-decoration: none;
+  /* border: 1px solid green; */
+}
+header ul li a:hover{
+  background-color:black;
+  text-decoration: none;
+  /* border: 1px solid green; */
+}
 
 /* <!--------------------------login and signup page -------------------------> */
 
@@ -186,8 +209,7 @@ h2 {
   }
 
 #app {
-    margin: 130px 0 40px 0;
-    position: relative;
+    margin: 0px 0 40px 0;
     display:flex;
     border-radius: 10px;
    /* background: #fff; */
@@ -196,6 +218,14 @@ h2 {
   }
 
 /* <!-----------left-side-bar----------------------> */
+
+#app .left-side-bar{
+   height: 100%;
+    z-index: 1;
+    left: 0;
+    background-color: #111;
+  /* border: 1px solid red; */
+}
 /* <!-----------right-side-bar----------------------> */
 
 #app .right-side-bar{
@@ -243,7 +273,7 @@ h2 {
     font : sans-serif;
   }
 
-ul {
+#app ul {
     display: block;
     list-style-type: none;
     padding: 0;
@@ -256,7 +286,7 @@ ul {
     border-top: 1px solid #e6e6e6;
   }
 
-ul li {
+#app ul li {
     position: relative;
     font-size: 18px;
     border-bottom: 1px solid #ededed;
@@ -265,13 +295,13 @@ ul li {
     border-radius: 10px;
   }
 
-ul li:hover{
+#app ul li:hover{
     color: #555;
     text-decoration: none;
     background-color: #f5f5f5;
   }  
 
-ul li span{
+#app ul li span{
     font-size:  25px;
     font-family: cursive;
     cursor:pointer;    

@@ -4,6 +4,7 @@ import List from './List'
 import Filter from './Filter'
 import CategoryInput from './CategoryInput'
 import Category from './Category'
+import Header from './Header'
 import {connect} from 'react-redux'
 
 
@@ -21,7 +22,10 @@ var App =React.createClass({
     render(){
         return (
         <div>
-         <h2>To-Do App!</h2>
+         {/* <h2>To-Do App!</h2> */}
+         <header>
+            <Header />
+        </header>
          <div id ="app">
              <div className="left-side-bar">
                 <CategoryInput dispatch={this.props.dispatch} />

@@ -26,7 +26,7 @@
         var createItem = function(itemText,i) {
         
             return (
-                <TodoItem key={i} value={i}>{itemText}</TodoItem>
+                <TodoItem dispatch={this.props.dispatch} key={i} value={i}>{itemText}</TodoItem>
             );
         };
         var allitems = this.props.todos;

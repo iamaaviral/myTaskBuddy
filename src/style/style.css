@@ -9,7 +9,6 @@ body {
       font-weight: 300;
       background: linear-gradient(-45deg, #E73C7E, #23A6D5);
       background-attachment: fixed;
-      overflow-y: hidden;
       /* max-width: 500px; 
       width: 100wh;
       height: 100 vh; 
@@ -37,6 +36,7 @@ body {
     }
   } */
 
+/* <!-----------------------------HEADER STARTS HERE ------------------------------------> */
 
 header ul{
   padding: 10px;
@@ -52,10 +52,6 @@ header li{
   background-color: transparent;
 }
 
-header li:hover{
-  background-color: transparent;
-}
-
 header ul li a{
   color:white;
   text-decoration: none;
@@ -63,7 +59,6 @@ header ul li a{
 }
 header ul li a:hover{
   background-color:black;
-  text-decoration: none;
   /* border: 1px solid green; */
 }
 
@@ -210,10 +205,11 @@ h2 {
   }
 
 #app {
-    margin: 0px 0 40px 0;
+    margin: 0px 40px 40px 40px;
     display:flex;
     border-radius: 10px;
     height:545px;
+    /* overflow-y: hidden; */
    /* background: #fff; */
    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.5), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.5);*/
    /* justify-content: space-between; */
@@ -224,7 +220,8 @@ h2 {
 #app .left-side-bar{
     z-index: 1;
     left: 0;
-    background-color: #111;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5),0px 1px 1px -3px rgba(0, 0, 0, 0.5), 0px 2px 2px -6px rgba(0, 0, 0, 0.5);
+    /* background-color: #111; */
   /* border: 1px solid red; */
 }
 /* <!-----------right-side-bar----------------------> */

@@ -4,6 +4,7 @@ function getId(state){
     }, -1) + 1
 }
 
+
 let reducer = function(state, action){
     switch (action.type) {
         case 'ADD_TODO':
@@ -65,7 +66,16 @@ let reducer = function(state, action){
             return Object.assign({},state, {
                 selectedCategory : action.payload
         })
-        
+
+        case 'DELETE_CATEGORY':
+        var newtodo = state;
+        var allItems = state.Todo.slice(); //copy array
+            allItems.splice(action.id, 1); //remove element
+            // console.log(allItems);
+            newtodo.Todo = allItems;
+        return Object.assign({},state, {
+            state : {newtodo, ...state }
+    })
                     
         default: 
                 return state;

@@ -22,6 +22,11 @@ var Category  = React.createClass({
         // console.log(event);
         this.props.dispatch(actions.changeCategory(event.currentTarget.dataset.id))
     },
+
+    handleDelete(event){
+        // console.log(event.currentTarget.dataset);
+        this.props.dispatch(actions.deleteCategory(event.currentTarget.dataset.id))
+    },
     render: function(){	
     
         var allitems =this.props.todos;
@@ -31,9 +36,13 @@ var Category  = React.createClass({
             allitems.map(function(item,i){ 
             return(
         
-                <li key={i}> <a href="#"  data-id={i} onClick={this.handleCategory} >
-                         <span >{item.todos.length}</span>{item.name}
-                </a></li>
+                <li key={i}>
+                         <a href="#"  data-id={i} onClick={this.handleCategory} >
+                             <span >{item.todos.length}</span>
+                            {item.name}
+                         </a>
+                         <button  data-id={i} className="del" onClick={this.handleDelete} >&#x2716;</button>
+                </li>
             )
         },this)}</div>;
     }

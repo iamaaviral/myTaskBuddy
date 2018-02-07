@@ -48,6 +48,13 @@ let actions = {
             type : 'CHANGE_CATEGORY',
             payload: id
         }
+    },
+
+    deleteCategory: function(id){
+        return {
+            type : 'DELETE_CATEGORY',
+            id: id
+        }
     }
 }
 

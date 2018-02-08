@@ -34,7 +34,7 @@
         var status = this.props.filter[0].Status;
         switch (status){
             case 'false':
-             allitems = allitems.filter(t => !t.completed)
+             allitems = allitems.filter(t => t.important)
              break;
              case 'true':
              allitems = allitems.filter(t => t.completed)

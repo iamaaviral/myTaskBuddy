@@ -268,6 +268,10 @@ h2 {
   flex-direction: column;
 }
 
+#filterbar{
+  border-bottom: 1px dashed black;
+}
+
 #app .left-side-bar .category .list{
   text-decoration: none;
   list-style-type: none;
@@ -279,6 +283,7 @@ h2 {
   padding-left: 3px;
   padding-right: 3px;
   text-align: center;
+  padding: 0;
 }
 
 .sidebarItem a{
@@ -308,7 +313,7 @@ h2 {
   cursor: pointer;
 }
 
-.sidebarItem a .title{
+.sidebarItem a .title,.list-icon .fa {
 font-size: 15px;
 font-weight: 400;
 white-space: nowrap;
@@ -326,6 +331,12 @@ flex: 1;
 padding-left: 6px;
 padding-right: 6px;
 }
+
+
+.list-icon .fa-star-o{
+  color: yellowgreen;
+}
+
 
 .sidebarItem a .count {
   color: #bdbcbb;
@@ -454,7 +465,7 @@ padding-right: 6px;
     background-color: inherit;
     border: none;
     cursor: pointer;
-    color: #ed5e5e;
+    color:yellowgreen;
     transition: 1s;
   }
 

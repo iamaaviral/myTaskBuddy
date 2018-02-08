@@ -50,7 +50,7 @@ var Category  = React.createClass({
                          <span className="title" data-id={i} onClick={this.handleCategory} >
                             {item.name}
                          </span>
-                         <span className="count"> {item.todos.length} </span>
+                         <span className="count"> {item.todos.length>0 ? item.todos.length : ''} </span>
                          <button  data-id={i} className="del" onClick={this.handleDelete} >&#x2716;</button>
                 </a>
                 </li>

@@ -28,9 +28,9 @@ var App =React.createClass({
         </header>
          <div id ="app">
              <div className="left-side-bar">
-                <CategoryInput dispatch={this.props.dispatch} />
-                <Category dispatch={this.props.dispatch} selectedID ={this.props.selectedCategory} todos = {this.props.Todo}/>
                 <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem} filter={this.props.filter}/>
+                <Category dispatch={this.props.dispatch} selectedID ={this.props.selectedCategory} todos = {this.props.Todo}/>
+                <CategoryInput dispatch={this.props.dispatch} />
              </div>
             <div className="right-side-bar">
                 <div className="main">

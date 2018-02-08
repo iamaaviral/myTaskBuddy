@@ -28,7 +28,7 @@ const CategoryInput = React.createClass({
 
     render(){
         return(
-            <div>
+            <div className="categoryInput">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Enter your Category" value={this.state.inputText} onChange={this.handleChange}/>
                 </form>

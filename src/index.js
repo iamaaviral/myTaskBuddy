@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import configureStore from './redux/store'
 import { Provider } from 'react-redux'
 import './style/style.css'
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import Routes from './routes'
 
 let initialState = {

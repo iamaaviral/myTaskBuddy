@@ -12,8 +12,9 @@ import {connect} from 'react-redux'
 var App =React.createClass({
 
     filterItem : function(event){
-        console.log(event.target);
-        this.props.filter[0].Status = event.target.value;
+        // var x = document.getElementsByTagName("span")
+        // console.log( event.target.getAttribute("value"));
+        this.props.filter[0].Status =  event.target.getAttribute("value");
         this.setState({
             filter: this.props.filter
         });

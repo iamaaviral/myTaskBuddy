@@ -24,7 +24,7 @@ class TodoiItem extends Component{
                <span  onClick={this.handleComplete.bind(this)} className={this.props.children.completed ? 'completed' : '' }>{this.props.children.text}</span>
                <div className="btn">
                <button  className={this.props.children.important ? 'important' : 'imp' } onClick={this.handleImportant.bind(this)} > <i className="fa fa-star-o"></i></button>
-              <button  className="del" onClick={this.handleDelete.bind(this)} >&#x2716;</button>
+              <button  className="del" onClick={this.handleDelete.bind(this)} > <i className="fa fa-trash-o"></i></button>
               </div>
                {/* <i className="fa fa-trash" aria-hidden="true" onClick={this.handleDelete.bind(this) > */}
             </li>

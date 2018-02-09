@@ -328,10 +328,14 @@ box-flex: 1;
 -webkit-flex: 1;
 -ms-flex: 1;
 flex: 1;
-padding-left: 6px;
+padding-left: 10px;
 padding-right: 6px;
 }
 
+.list-icon .fa{
+  font-size: 20px;
+  padding-left: 4px;
+}
 
 .list-icon .fa-star-o{
   color: yellowgreen;
@@ -356,6 +360,8 @@ padding-right: 6px;
   padding-left: 4px;
   padding-right: 4px;
 }
+
+
 /* <!-----------right-side-bar----------------------> */
 
 #app .right-side-bar{
@@ -371,6 +377,7 @@ padding-right: 6px;
     /* overflow:auto; */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);        
     /* border: 1px solid red; */
+    margin: 10px 0px 30px 20px;
   }
 
 
@@ -412,7 +419,7 @@ padding-right: 6px;
     font : sans-serif;
   }
 
-/* #app ul {
+#app ul {
     display: block;
     list-style-type: none;
     padding: 0;
@@ -422,35 +429,54 @@ padding-right: 6px;
     -webkit-margin-end: 0px;
     position: relative;
     z-index: 2;
-  } */
-/* 
-#app ul li {
+  }
+
+#app .right-side-bar ul li {
+  font-family: "Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial","sans-serif";
     position: relative;
     font-size: 18px;
     display: list-item;
     padding: 10px;
     border-radius: 10px;
-  } */
+    margin-top:5px;
+    border:1px solid rgba(0,0,0,0.1);
+    transition:0.5s;
+    animation-name: slide;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+        /* transform: translateY(10px); */
+  }
 
-/* #app ul li:hover{
-    color: #555;
+  @keyframes slide {
+    from {
+      margin-top: -20px;
+    }
+  
+    to {
+      margin-top: 5px;
+    }
+  }
+
+#app .right-side-bar ul li:hover{
+    color: white;
     text-decoration: none;
-    background-color: #f5f5f5;
-  }   */
+    background-color: rgba(0, 0, 0, 0.1) ;
+  } 
 
-/* #app ul li span{
+#app .right-side-bar ul li span{
     font-size:  25px;
-    font-family: cursive;
     cursor:pointer;    
-  } */
+  }
 
-.btn{
+  #app .right-side-bar .btn{
       position: absolute;
       display: inline-block;
       right: 0px;      
   }
 
-.imp{
+.imp,.important,.del,.imp:focus,.imp:active,.imp:visited,.del:focus,.del:active,.del:visited{
+  outline:0;
     right: 0px;
     top:0px;
     bottom: 0px;
@@ -458,25 +484,14 @@ padding-right: 6px;
     background-color: inherit;
     border: none;
     cursor: pointer;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
-.important{
-    font-size:  20px;
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
+.important,.important:focus,.important:active,.important:visited{
+     outline:0;
     color:yellowgreen;
-    transition: 1s;
-  }
-
-.del{ 
-    right: 0px;
-    top:0px;    
-    bottom: 0px;
-    font-size:  15px;
-    background-color: inherit;
-    border: none;
-    cursor: pointer;      
+    transition: 0.5s;
   }
 
 .del:hover{

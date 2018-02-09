@@ -5,14 +5,25 @@
 }    
 
 body {
-      font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      /* font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+      font-family: "Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial","sans-serif";
       line-height: 2em;
       min-width: 230px;
       margin: 0 auto;
+      height: 100vh; 
       -webkit-font-smoothing: antialiased;
       -moz-font-smoothing: antialiased;
       font-weight: 300;
       background: linear-gradient(-45deg, #E73C7E, #23A6D5);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+      /* position: fixed; */
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -100;
       background-attachment: fixed;
       overflow:hidden;
       /* max-width: 500px; 
@@ -41,7 +52,6 @@ body {
       background-position: 0% 50%
     }
   } */
-
 /* <!-----------------------------HEADER STARTS HERE ------------------------------------> */
 
 header ul{
@@ -211,8 +221,9 @@ h2 {
   }
 
 #app {
-    margin: 0px 40px 40px 0px;
+    margin: -50px 40px 40px 0px;
     display:flex;
+    padding: 50px 0 0 0;
     /* border-radius: 10px; */
     height:100vh;
     overflow:hidden;
@@ -371,7 +382,7 @@ padding-right: 6px;
     /* border: 1px solid red; */
   }
 #app .right-side-bar .main{
-    max-height:95%;
+    max-height:90%;
     /* border:1px solid red; */
     overflow:auto;
     /* overflow:auto; */
@@ -432,7 +443,6 @@ padding-right: 6px;
   }
 
 #app .right-side-bar ul li {
-  font-family: "Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial","sans-serif";
     position: relative;
     font-size: 18px;
     display: list-item;

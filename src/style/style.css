@@ -52,6 +52,9 @@ body {
       background-position: 0% 50%
     }
   } */
+#root a{
+  cursor:pointer;
+}
 /* <!-----------------------------HEADER STARTS HERE ------------------------------------> */
 
 header ul{
@@ -297,12 +300,25 @@ h2 {
   padding: 0;
 }
 
+
+.categoryInput .new-todo{
+  display: flex;
+  flex-direction: row;
+  margin:0 auto;
+  width: 80%;
+  font-size: 15px;
+  line-height: 1em;
+  padding: 6px;
+}
+
 .sidebarItem a{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 38px;
   color: #1c1c1c;
+  
+font-weight: 400;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -321,17 +337,15 @@ h2 {
   align-items: center;
   padding-right: 8px;
   padding-left: 8px;
-  cursor: pointer;
 }
+
 
 .sidebarItem a .title,.list-icon .fa {
 font-size: 15px;
-font-weight: 400;
 white-space: nowrap;
 overflow: hidden;
 -o-text-overflow: ellipsis;
 text-overflow: ellipsis;
-color: #262626;
 -webkit-box-flex: 1;
 -moz-box-flex: 1;
 -o-box-flex: 1;
@@ -341,6 +355,12 @@ box-flex: 1;
 flex: 1;
 padding-left: 10px;
 padding-right: 6px;
+}
+
+
+.sidebarItem.categoryInput a{
+  color: black;
+  font-weight: 600;
 }
 
 .list-icon .fa{
@@ -371,6 +391,7 @@ padding-right: 6px;
   padding-left: 4px;
   padding-right: 4px;
 }
+
 
 
 /* <!-----------right-side-bar----------------------> */

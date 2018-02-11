@@ -41,7 +41,7 @@ var App =React.createClass({
                     <TextInput dispatch={this.props.dispatch}/>
                     <List dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter}/>
                 </div>
-                <DeleteCompleted dispatch={this.props.dispatch} filter={this.props.filter} />
+                <DeleteCompleted dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter} />
             </div>
          </div>
         </div>

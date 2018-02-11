@@ -508,12 +508,19 @@ padding-right: 6px;
     top:0px;
     bottom: 0px;
     font-size:  20px;
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     padding-left: 6px;
     padding-right: 6px;
   }
+
+.deleteCompleted.btn{
+  margin-right:40px;
+  border-radius:20px;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+}
 
 .important,.important:focus,.important:active,.important:visited{
      outline:0;

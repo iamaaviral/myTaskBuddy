@@ -20,7 +20,7 @@ var App =React.createClass({
             filter: this.props.filter
         });
     },
-    
+
     render(){
         return (
         <div>

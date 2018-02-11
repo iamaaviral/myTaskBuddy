@@ -301,7 +301,7 @@ h2 {
 .categoryInput .new-todo{
   display: flex;
   flex-direction: row;
-  margin:0 auto;
+  margin: 5px auto;
   width: 80%;
   font-size: 15px;
   line-height: 1em;
@@ -314,8 +314,7 @@ h2 {
   box-sizing: border-box;
   height: 38px;
   color: #1c1c1c;
-  
-font-weight: 400;
+  font-weight: 400;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -486,7 +485,7 @@ padding-right: 6px;
     }
   }
 
-#app .right-side-bar ul li:hover{
+#app .right-side-bar ul li:hover, .hover,.sidebarItem a:hover{
     color: white;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1) ;

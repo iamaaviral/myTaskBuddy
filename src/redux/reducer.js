@@ -23,13 +23,13 @@ let reducer = function(state, action){
             })
         case 'COMPLETE_TODO':
             var newtodo = state.Todo;
-            console.log(state.Todo[state.selectedCategory].todos);
-            console.log(action.id);
-            console.log(action.id);
+            // console.log(state.Todo[state.selectedCategory].todos);
+            // console.log(action.id);
+            // console.log(action.id);
             var allItems = state.Todo[state.selectedCategory].todos.map((todo) => {
                 return todo.id === action.id ? Object.assign({}, todo, {completed : !todo.completed}) : todo
             });
-            console.log(allItems);
+            // console.log(allItems);
             newtodo[state.selectedCategory].todos = allItems
             return Object.assign({},state, {
                 state : {newtodo, ...state }
@@ -68,11 +68,13 @@ let reducer = function(state, action){
         })
 
         case 'DELETE_CATEGORY':
+        // state.selectedCategory--;
         var newtodo = state;
         var allItems = state.Todo.slice(); //copy array
             allItems.splice(action.id, 1); //remove element
             // console.log(allItems);
             newtodo.Todo = allItems;
+            state.selectedCategory = action.id-1;
         return Object.assign({},state, {
             state : {newtodo, ...state }
     })

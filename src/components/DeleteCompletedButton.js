@@ -12,11 +12,12 @@ var DeleteCompleted  = React.createClass({
 
 render: function(){	
     
-        return 
+        return (
         <div className="deleteCompleted">
             <button onClick={this.handleDelete}  className={this.props.filter[0].Status === "true" ? '' : 'hidden'}>Delete all completed</button>
-        </div>;
-     }
+        </div>
+
+        )}
 });
                
 export default DeleteCompleted

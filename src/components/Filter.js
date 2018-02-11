@@ -5,14 +5,14 @@ import {connect} from 'react-redux'
 class Filter extends Component{
 
     isActive(value){
-        return 'btn '+((value===this.props.filter[0].Status) ?'btn-primary':'default');
+        return ((value===this.props.filter[0].Status) ?'hover':'');
     }
     render(){
         return (
          <div id ="filterbar">
                     <ul>
                         <li className="sidebarItem"> 
-                        <a>
+                        <a className={this.isActive('SHOW_ALL')}>
                         <span className="list-icon">
                         <i className="fa fa-sticky-note-o"></i>
                         </span>
@@ -25,7 +25,7 @@ class Filter extends Component{
                          </li>
 
                         <li className="sidebarItem">
-                          <a>
+                          <a className={this.isActive('false')}>
                           <span className="list-icon">
                         <i className="fa fa-star-o"></i>
                         </span>
@@ -38,7 +38,7 @@ class Filter extends Component{
                          </li>
 
                             <li className="sidebarItem">
-                          <a>
+                          <a className={this.isActive('true')}>
                           <span className="list-icon">
                         <i className="fa fa-calendar-check-o"></i>
                         </span>

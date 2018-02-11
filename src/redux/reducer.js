@@ -76,6 +76,16 @@ let reducer = function(state, action){
         return Object.assign({},state, {
             state : {newtodo, ...state }
     })
+
+    case 'DELETE_COMPLETED':
+            var newtodo = state.Todo;
+            var allItems = state.Todo[state.selectedCategory].todos.filter((todo) => {
+                return !todo.completed
+            })
+            newtodo[state.selectedCategory].todos = allItems
+            return Object.assign({},state, {
+                state : {newtodo, ...state }
+        })
                     
         default: 
                 return state;

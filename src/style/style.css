@@ -52,9 +52,6 @@ body {
       background-position: 0% 50%
     }
   } */
-#root a{
-  cursor:pointer;
-}
 /* <!-----------------------------HEADER STARTS HERE ------------------------------------> */
 
 header ul{
@@ -403,7 +400,7 @@ padding-right: 6px;
     /* border: 1px solid red; */
   }
 #app .right-side-bar .main{
-    max-height:90%;
+    max-height:80%;
     /* border:1px solid red; */
     overflow:auto;
     /* overflow:auto; */
@@ -534,4 +531,11 @@ padding-right: 6px;
     text-decoration: line-through;
   }
 
+.hidden{
+    display:none;
+  }
+
+#root a{
+    cursor:pointer;
+  }
 

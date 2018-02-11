@@ -5,6 +5,7 @@ import Filter from './Filter'
 import CategoryInput from './CategoryInput'
 import Category from './Category'
 import Header from './Header'
+import DeleteCompleted from './DeleteCompletedButton'
 import {connect} from 'react-redux'
 
 
@@ -19,7 +20,7 @@ var App =React.createClass({
             filter: this.props.filter
         });
     },
-
+    
     render(){
         return (
         <div>
@@ -40,6 +41,7 @@ var App =React.createClass({
                     <TextInput dispatch={this.props.dispatch}/>
                     <List dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} filter={this.props.filter}/>
                 </div>
+                <DeleteCompleted dispatch={this.props.dispatch} filter={this.props.filter} />
             </div>
          </div>
         </div>

@@ -55,7 +55,13 @@ let actions = {
             type : 'DELETE_CATEGORY',
             id: id
         }
-    }
+    },
+    
+    deleteCompleted:function(){
+        return {
+            type : 'DELETE_COMPLETED',
+        }
+    },
 }
 
 export default actions

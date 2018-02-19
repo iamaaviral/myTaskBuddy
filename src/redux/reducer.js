@@ -88,7 +88,14 @@ let reducer = function(state, action){
             return Object.assign({},state, {
                 state : {newtodo, ...state }
         })
-                    
+    
+    case 'HANDLE_COLLAPSED':
+        var new_collapsed = !state.collapsed;
+        console.log(new_collapsed);
+        return Object.assign({},state, {
+            collapsed : new_collapsed
+    })
+
         default: 
                 return state;
     }

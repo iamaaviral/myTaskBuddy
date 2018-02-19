@@ -62,6 +62,12 @@ let actions = {
             type : 'DELETE_COMPLETED',
         }
     },
+
+    handleCollapsed:function(){
+        return {
+            type : 'HANDLE_COLLAPSED',
+        }
+    }
 }
 
 export default actions

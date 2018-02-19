@@ -27,7 +27,7 @@ class Filter extends Component{
                         <li className="sidebarItem">
                           <a className={this.isActive('false')}>
                           <span className="list-icon">
-                        <i className="fa fa-star-o"></i>
+                        <i className="fa fa-star"></i>
                         </span>
                         <span className="title" onClick={this.props.onFilter} value="false">
                         Important

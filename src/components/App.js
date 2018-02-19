@@ -26,14 +26,14 @@ var App =React.createClass({
         <div>
          {/* <h2>To-Do App!</h2> */}
          <header>
-            <Header />
+            <Header dispatch={this.props.dispatch} collpased={this.props.collapsed}/>
         </header>
          <div id ="app">
-             <div className="left-side-bar">
+             <div className={this.props.collapsed ? "left-side-bar collapsed" : "left-side-bar"}>
                 <div className="lists-scroll">
                 <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem} filter={this.props.filter}/>
                 <Category dispatch={this.props.dispatch} selectedID ={this.props.selectedCategory} todos = {this.props.Todo}/>
-                <CategoryInput dispatch={this.props.dispatch} />
+                <CategoryInput dispatch={this.props.dispatch}  collpased={this.props.collapsed}/>
                 </div>
              </div>
             <div className="right-side-bar">

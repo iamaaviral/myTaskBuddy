@@ -278,6 +278,9 @@ h2 {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+#app .collapsed{
+  width: 39px;
+}
 
 #filterbar{
   border-bottom: 1px dashed black;
@@ -364,8 +367,18 @@ padding-right: 6px;
   padding-left: 4px;
 }
 
-.list-icon .fa-star-o{
+.list-icon .fa-star{
   color: yellowgreen;
+  /* background-color: yellowgreen; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.list-icon .fa-calendar-check-o{
+  color: rgba(201, 25, 19, 0.89);
+  /* background-color: yellowgreen; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 

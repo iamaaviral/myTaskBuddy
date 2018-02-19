@@ -65,21 +65,24 @@ header ul{
 }
 header li{
   display: inline;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 0px;
   /* border: 1px solid red; */
   background-color: transparent;
-  cursor: pointer;
 }
 
 header ul li a{
-  color:white;
+  color:rgb(0, 0, 0);
   text-decoration: none;
   /* border: 1px solid green; */
 }
-header ul li a:hover{
-  background-color:black;
-  /* border: 1px solid green; */
+
+header ul .right li {
+padding:10px;
 }
+/*
+header ul li a:hover{
+  /* background-color:black; */
+  /* border: 1px solid green; */
 
 /* .header{
   border: 1px solid red;
@@ -513,7 +516,7 @@ padding-right: 6px;
     }
   }
 
-#app .right-side-bar ul li:hover, .hover,.sidebarItem a:hover{
+#app .right-side-bar ul li:hover, .hover,a:hover{
     color: white;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1) ;

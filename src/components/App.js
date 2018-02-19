@@ -25,7 +25,7 @@ var App =React.createClass({
         return (
         <div>
          {/* <h2>To-Do App!</h2> */}
-         <header>
+         <header className="header">
             <Header dispatch={this.props.dispatch} collpased={this.props.collapsed}/>
         </header>
          <div id ="app">

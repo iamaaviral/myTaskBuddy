@@ -12,10 +12,14 @@ const Header = React.createClass({
     render(){
         return (
         <ul>
-            <li><button onClick={this.handleCollapsed}>collapse</button></li>
+            <span className="left">
+            <li><i className="fa fa-bars" onClick={this.handleCollapsed}></i></li>
+            </span>
+            <span className="right">
             <li><a href="#">To DO</a></li>
             <li><a href="#">Notifs</a></li>
             <li><a href="#">Signout</a></li>
+            </span>
         </ul>
         )
     }

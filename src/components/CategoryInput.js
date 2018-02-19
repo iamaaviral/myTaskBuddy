@@ -28,10 +28,17 @@ const CategoryInput = React.createClass({
       }
     },
     handleEdit(event) {
+        if(this.props.collapsed){
+        // console.log(this.props.collapsed);
         this.props.dispatch(actions.handleCollapsed())
         this.setState({
             editing:false
         })
+    }else{
+        this.setState({
+            editing:false
+        })
+    }
     },
 
     render(){

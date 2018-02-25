@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router-dom';
 import { Route, withRouter } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
-import { FacebookLogin } from 'react-facebook-login-component';
+// import { FacebookLogin } from 'react-facebook-login-component';
+import FacebookLogin from 'react-facebook-login'
 
 class Login extends Component {
 
@@ -15,6 +16,7 @@ class Login extends Component {
         }
         this.login = this.login.bind(this);
         this.change = this.change.bind(this);
+        this.componentClicked = this.componentClicked.bind(this);
     }
 
 
@@ -87,23 +89,20 @@ class Login extends Component {
         return true;
     }
 
-    loginFace(res,type){
-        if(res.email){
-            this.setState({ username: res.email });
-        }
-        else{
-            this.setState({ username: "res.email" });
-        }
-    }
+     responseFacebook = (response) => {
+        console.log(response);
+        //anything else you want to do(save to localStorage)...
+        var resFace= response;
+        this.componentClicked(resFace);
+      }
 
+      componentClicked(res){
+            if(res.email){
+                this.setState({username: res.email});
+            }
+      }
 
     render() {
-
-        const responseFacebook = (response) => {
-            console.log(response);
-            //anything else you want to do(save to localStorage)...
-            this.loginFace(response,"facebook");
-          }
 
         if (this.state.redirect) {
             return (<Redirect to={'/main'} />)
@@ -114,6 +113,7 @@ class Login extends Component {
 
                     <div className="group">
                         <input type="text" name="username" ref="username"
+                            value={this.state.username}
                             onChange={e => this.change(e)}
                             required="required" /><span className="bar"></span>
                         <label id="usernameLabel">Username</label>
@@ -130,15 +130,14 @@ class Login extends Component {
                     </div>
                     <div className="btn-box">
                         <button className="button btn-submit" onClick={e => this.login(e)} type="submit">login</button>
-                        <FacebookLogin  socialId="158761201565558"
-                              language="en_US"
-                              scope="public_profile,email"
-                              responseHandler={this.responseFacebook}
-                              xfbml={true}
-                              fields="id,email,name"
-                              version="v2.5"
-                              className="button btn-submit facebook-login"
-                              buttonText="Login With Facebook"/>
+                        
+
+                    <FacebookLogin
+                        appId="158761201565558"
+                        autoLoad={true}
+                        fields="name,email,picture"
+                        onClick={this.componentClicked}
+                        callback={this.responseFacebook} />
                     </div>
                     <p>Forgot your Password? <a >Click Here</a></p>
                     <p>New User? <a href="/">Sign Up</a></p>

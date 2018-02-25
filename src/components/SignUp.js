@@ -132,7 +132,7 @@ import FacebookLogin from 'react-facebook-login'
             if(res.email){
                 this.setState({ firstname: res.name,
                                 lastname: res.name,
-                                username: res.username,
+                                username: res.email,
                                 email: res.email});
             }
       }
@@ -144,30 +144,33 @@ import FacebookLogin from 'react-facebook-login'
               
               <div className="group">
           <input type="text"   name="firstname" ref="firstname"
-                                value={this.state.firstName}
+                                value={this.state.firstname}
                                 onChange={e => this.change(e)}
                                 // onChange={this.change.bind(this)}
                                 required="required"/><span className="bar"></span>
           <label id="firstnameLabel"> First Name</label>
           <div className="error" id="firstnameError" />
         </div>
+         
           <div className="group">
             <input type="text" name="lastname" ref="lastname"
-                                  value={this.state.lastName}
+                                  value={this.state.lastname}
                                   onChange={e => this.change(e)}
                                   // onChange={this.change.bind(this)}
                                   required="required"/><span className="bar"></span>
             <label id="lastnameLabel">Last Name</label>
             <div className="error" id="lastnameError" />
           </div>
+         
           <div className="group">
           <input type="text" name="username" ref="username"
-          value={this.state.username}
-              onChange={e => this.change(e)}
-              required="required" /><span className="bar"></span>
+                            value={this.state.username}
+                            onChange={e => this.change(e)}
+                            required="required" /><span className="bar"></span>
           <label id="usernameLabel">Username</label>
           <div className="error" id="usernameError" />
       </div>
+       
         <div className="group">
           <input type="email"   name="email" ref="email"
                                 value={this.state.email}

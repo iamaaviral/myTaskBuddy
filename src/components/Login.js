@@ -134,7 +134,7 @@ class Login extends Component {
 
                     <FacebookLogin
                         appId="158761201565558"
-                        autoLoad={true}
+                        autoLoad={false}
                         fields="name,email,picture"
                         onClick={this.componentClicked}
                         callback={this.responseFacebook} />

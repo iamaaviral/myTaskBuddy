@@ -1,7 +1,8 @@
-    import React, {Component} from 'react';
-    import {browserHistory} from 'react-router-dom';
-    import { Route , withRouter} from 'react-router-dom';
-    import { FacebookLogin } from 'react-facebook-login-component';
+import React, {Component} from 'react';
+import {browserHistory} from 'react-router-dom';
+import { Route , withRouter} from 'react-router-dom';
+// import { FacebookLogin } from 'react-facebook-login-component';
+import FacebookLogin from 'react-facebook-login'
 
     class SignUp extends Component {
     constructor(props){
@@ -20,6 +21,7 @@
         }
         this.onSubmit = this.onSubmit.bind(this);
         this.change = this.change.bind(this);
+        this.componentClicked = this.componentClicked.bind(this);
     }
 
 
@@ -115,9 +117,24 @@
             }
 
      
-      responseFacebook (response) {
+    //   responseFacebook (response) {
+    //     console.log(response);
+    //     //anything else you want to do(save to localStorage)...
+    //   }
+      responseFacebook = (response) => {
         console.log(response);
         //anything else you want to do(save to localStorage)...
+        var resFace= response;
+        this.componentClicked(resFace);
+      }
+
+      componentClicked(res){
+            if(res.email){
+                this.setState({ firstname: res.name,
+                                lastname: res.name,
+                                username: res.username,
+                                email: res.email});
+            }
       }
       
       render() {
@@ -172,7 +189,7 @@
         
         <div className="btn-box">
           <button className="button btn-submit"  onClick={e => this.onSubmit(e)} type="submit">Sign Up</button>
-          <FacebookLogin  socialId="158761201565558"
+          {/* <FacebookLogin  socialId="158761201565558"
                               language="en_US"
                               scope="public_profile,email"
                               responseHandler={this.responseFacebook}
@@ -180,7 +197,13 @@
                               fields="id,email,name"
                               version="v2.5"
                               className="button btn-submit facebook-login"
-                              buttonText="Login With Facebook"/>
+                              buttonText="Login With Facebook"/> */}
+             <FacebookLogin
+                        appId="158761201565558"
+                        autoLoad={false}
+                        fields="name,email,picture"
+                        onClick={this.componentClicked}
+                        callback={this.responseFacebook} />
           </div>
             <p>Already registered? <a href="/login">Sign in</a></p>
                 </form>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router-dom';
 import { Route, withRouter } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
-// import { FacebookLogin } from 'react-facebook-login-component';
-import FacebookLogin from 'react-facebook-login'
+import { FacebookLogin } from 'react-facebook-login-component';
+// import FacebookLogin from 'react-facebook-login'
 
 class Login extends Component {
 
@@ -90,7 +90,7 @@ class Login extends Component {
     }
 
      responseFacebook = (response) => {
-        console.log(response);
+        // console.log(response);
         //anything else you want to do(save to localStorage)...
         var resFace= response;
         this.componentClicked(resFace);
@@ -131,13 +131,16 @@ class Login extends Component {
                     <div className="btn-box">
                         <button className="button btn-submit" onClick={e => this.login(e)} type="submit">login</button>
                         
-
-                    <FacebookLogin
-                        appId="158761201565558"
-                        autoLoad={false}
-                        fields="name,email,picture"
-                        onClick={this.componentClicked}
-                        callback={this.responseFacebook} />
+                        <FacebookLogin  socialId="158761201565558"
+                              language="en_US"
+                              scope="public_profile,email"
+                              responseHandler={this.responseFacebook}
+                              xfbml={true}
+                              fields="id,email,name"
+                              version="v2.5"
+                               onClick={this.componentClicked}
+                              className="button btn-submit facebook-login"
+                              buttonText="Login With Facebook"/>
                     </div>
                     <p>Forgot your Password? <a >Click Here</a></p>
                     <p>New User? <a href="/">Sign Up</a></p>

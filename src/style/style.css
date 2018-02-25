@@ -25,7 +25,6 @@ body {
       right: 0;
       z-index: -100;
       background-attachment: fixed;
-      overflow:hidden;
       /* max-width: 500px; 
       width: 100wh;
       height: 100 vh; 
@@ -118,20 +117,20 @@ header ul li a:hover{
  }
 
 .group {
-    position: relative;
-    margin: 45px 0;
+  position: relative;
+  margin: 45px 0;
 }
 
 .group input{
-    background: none;
-    color: #c6c6c6;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 320px;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #c6c6c6;
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #c6c6c6;
 }
 
 input:focus{
@@ -218,6 +217,41 @@ label {
     color: #deeffd;
 }
 
+@media (min-width: 320px) and (max-width: 1024px) {
+
+  .wrapper{
+    max-width: 968px;
+    font-size: 25px;
+  }
+
+  .wrapper form {
+    width: 640px;
+    margin: 200px auto;
+    padding: 40px 0px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5),0px 1px 1px -3px rgba(0, 0, 0, 0.5), 0px 2px 2px -6px rgba(0, 0, 0, 0.5);
+ }
+ 
+.group {
+  margin: 60px 40px;
+}
+
+.group input{
+  font-size: 30px;
+  width: 100%;
+}
+
+.bar {
+  width: 100%;
+}
+
+input:focus ~ label, input:valid ~ label {
+  font-size: 16px;
+}
+
+label {
+  font-size: 25px;
+}
+}
 
 /* <!------------------------------main page starts here--------------------------> */
 h2 {
@@ -238,7 +272,7 @@ h2 {
   }
 
 #app {
-    margin: -50px 40px 40px 0px;
+    margin: -50px 40px -2px 0px;
     display:flex;
     padding: 50px 0 0 0;
     /* border-radius: 10px; */

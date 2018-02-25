@@ -122,7 +122,7 @@ import { FacebookLogin } from 'react-facebook-login-component';
     //     //anything else you want to do(save to localStorage)...
     //   }
       responseFacebook = (response) => {
-        console.log(response);
+        // console.log(response);
         //anything else you want to do(save to localStorage)...
         var resFace= response;
         this.componentClicked(resFace);

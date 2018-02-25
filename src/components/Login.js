@@ -87,33 +87,16 @@ class Login extends Component {
         return true;
     }
 
-    loginFace(e){
-        const responseFacebook = (response) => {
-            console.log(response);
-            }
-        this.setState({ username: response.email });
-        // this.setState({
-
-        // this.setState({ redirect: true });
-    }
-
-
-    // responseFacebook (response) {
-    //     console.log(response);
-    //     //anything else you want to do(save to localStorage)...
-    //     this.setState({ username: response.email });
-    //     this.setState({
-    //         firstname: "",
-    //         lastname: "",
-    //         username: "",
-    //         email: "",
-    //         password: "",
-    //       });
-
-    //   }
+    
 
 
     render() {
+
+        const responseFacebook = (response) => {
+            console.log(response);
+            //anything else you want to do(save to localStorage)...
+            this.setState({ username: response.email });
+          }
 
         if (this.state.redirect) {
             return (<Redirect to={'/main'} />)
@@ -148,8 +131,7 @@ class Login extends Component {
                               fields="id,email,name"
                               version="v2.5"
                               className="button btn-submit facebook-login"
-                              buttonText="Login With Facebook"
-                              onClick={e => this.loginFace(e)}/>
+                              buttonText="Login With Facebook"/>
                     </div>
                     <p>Forgot your Password? <a >Click Here</a></p>
                     <p>New User? <a href="/">Sign Up</a></p>

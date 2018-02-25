@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router-dom';
 import { Route , withRouter} from 'react-router-dom';
-// import { FacebookLogin } from 'react-facebook-login-component';
-import FacebookLogin from 'react-facebook-login'
+import { FacebookLogin } from 'react-facebook-login-component';
+// import FacebookLogin from 'react-facebook-login'
 
     class SignUp extends Component {
     constructor(props){
@@ -129,9 +129,11 @@ import FacebookLogin from 'react-facebook-login'
       }
 
       componentClicked(res){
+        var firstName = res.name.split(' ').slice(0, -1).join(' ');
+        var lastName =  res.name.split(' ').slice(-1).join(' ');
             if(res.email){
-                this.setState({ firstname: res.name,
-                                lastname: res.name,
+                this.setState({ firstname: firstName,
+                                lastname: lastName,
                                 username: res.email,
                                 email: res.email});
             }
@@ -192,21 +194,22 @@ import FacebookLogin from 'react-facebook-login'
         
         <div className="btn-box">
           <button className="button btn-submit"  onClick={e => this.onSubmit(e)} type="submit">Sign Up</button>
-          {/* <FacebookLogin  socialId="158761201565558"
+          <FacebookLogin  socialId="158761201565558"
                               language="en_US"
                               scope="public_profile,email"
                               responseHandler={this.responseFacebook}
                               xfbml={true}
                               fields="id,email,name"
                               version="v2.5"
+                               onClick={this.componentClicked}
                               className="button btn-submit facebook-login"
-                              buttonText="Login With Facebook"/> */}
-             <FacebookLogin
+                              buttonText="Login With Facebook"/>
+             {/* <FacebookLogin
                         appId="158761201565558"
                         autoLoad={false}
                         fields="name,email,picture"
                         onClick={this.componentClicked}
-                        callback={this.responseFacebook} />
+                        callback={this.responseFacebook} /> */}
           </div>
             <p>Already registered? <a href="/login">Sign in</a></p>
                 </form>

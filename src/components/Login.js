@@ -87,7 +87,14 @@ class Login extends Component {
         return true;
     }
 
-    
+    loginFace(res,type){
+        if(res.email){
+            this.setState({ username: res.email });
+        }
+        else{
+            this.setState({ username: "res.email" });
+        }
+    }
 
 
     render() {
@@ -95,7 +102,7 @@ class Login extends Component {
         const responseFacebook = (response) => {
             console.log(response);
             //anything else you want to do(save to localStorage)...
-            this.setState({ username: response.email });
+            this.loginFace(response,"facebook");
           }
 
         if (this.state.redirect) {

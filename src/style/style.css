@@ -313,7 +313,6 @@ h2 {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
-  box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -400,7 +399,6 @@ text-overflow: ellipsis;
 -webkit-box-flex: 1;
 -moz-box-flex: 1;
 -o-box-flex: 1;
-box-flex: 1;
 -webkit-flex: 1;
 -ms-flex: 1;
 flex: 1;

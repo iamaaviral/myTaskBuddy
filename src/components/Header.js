@@ -4,9 +4,11 @@ import actions from '../redux/actions'
 import { browserHistory } from 'react-router-dom';
 import { Route, withRouter } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
+var createReactClass = require('create-react-class');
 
 
-const Header = React.createClass({
+
+const Header = createReactClass({
     getInitialState () {
         return {
             redirect: false

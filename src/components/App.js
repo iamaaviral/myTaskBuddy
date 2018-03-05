@@ -7,10 +7,11 @@ import Category from './Category'
 import Header from './Header'
 import DeleteCompleted from './DeleteCompletedButton'
 import {connect} from 'react-redux'
+var createReactClass = require('create-react-class');
 
 
 // class App extends Component 
-var App =React.createClass({
+var App =createReactClass({
 
     filterItem : function(event){
         // var x = document.getElementsByTagName("span")

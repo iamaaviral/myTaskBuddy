@@ -1,7 +1,9 @@
     import React, {Component} from 'react'
+import {connect} from 'react-redux'
     import TodoItem from './TodoItem'
     import actions from '../redux/actions'
 
+    var createReactClass = require('create-react-class');
     // class List extends Component{
        
     //     render(){
@@ -20,8 +22,8 @@
     //             )
     //     }
     // }
-    var List = React.createClass({
-    render: function() {
+    var List = createReactClass({
+    render() {
 			
         var createItem = function(itemText,i) {
         

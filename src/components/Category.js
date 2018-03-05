@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import actions from '../redux/actions'
+var createReactClass = require('create-react-class');
 
 // class Category extends Component{
 
@@ -13,7 +14,7 @@ import actions from '../redux/actions'
 //     }
 // }
 
-var Category  = React.createClass({
+var Category  = createReactClass({
 		
     // changeTodo : function(e){
     //     this.props.onSelected( e.currentTarget.dataset.id);

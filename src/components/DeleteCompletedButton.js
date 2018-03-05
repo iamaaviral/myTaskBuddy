@@ -2,9 +2,10 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import actions from '../redux/actions'
+var createReactClass = require('create-react-class');
+              
                
-               
-var DeleteCompleted  = React.createClass({
+var DeleteCompleted  = createReactClass({
     
     handleDelete(event){
         this.props.dispatch(actions.deleteCompleted())

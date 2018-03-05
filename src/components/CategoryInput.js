@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import actions from '../redux/actions'
+var createReactClass = require('create-react-class');
 
-const CategoryInput = React.createClass({
+const CategoryInput = createReactClass({
     getInitialState () {
         return {
             inputText: '',

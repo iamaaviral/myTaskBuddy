@@ -26,6 +26,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.16.0",
     "colors": "^1.1.2",
+    "create-react-class": "^15.6.3",
     "css-loader": "^0.26.1",
     "express": "^4.13.4",
     "file-loader": "^0.9.0",
@@ -34,8 +35,8 @@
     "lodash": "^4.17.2",
     "node-sass": "^4.1.1",
     "path": "^0.12.7",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-facebook-login": "^3.7.2",
     "react-facebook-login-component": "^0.9.1",
     "react-favicon": "0.0.13",
@@ -59,7 +60,11 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-14": "^1.0.5",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.2",
+    "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.2.0"
   }
 }

@@ -1,12 +1,10 @@
-import { createStore ,compose, applyMiddleware} from 'redux'
-import reducer from './reducer'
-import { createLogger } from 'redux-logger'
+import { createStore, compose, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import reducer from './reducer';
 
-let finalCreateStore = compose(
-    applyMiddleware(createLogger())
-)(createStore)
+const finalCreateStore = compose(applyMiddleware(createLogger()))(createStore);
 
-export default function configureStore(initialState){
-   initialState = initialState || {todos : []}
-    return createStore(reducer, initialState)
+export default function configureStore(initialState) {
+  initialState = initialState || { todos: [] }; // eslint-disable-line no-param-reassign
+  return createStore(reducer, initialState);
 }

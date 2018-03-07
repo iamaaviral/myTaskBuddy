@@ -7,67 +7,49 @@
 //     }
 // }
 
-let actions = {
-    addTodo: function(text) {
-        return {
-            type : 'ADD_TODO',
-            text: text
-        }
-    },
+const actions = {
+  addTodo: text => ({
+    type: 'ADD_TODO',
+    text,
+  }),
 
-    completeTodo: function(id) {
-        return {
-            type : 'COMPLETE_TODO',
-            id: id
-        }
-    },
+  completeTodo: id => ({
+    type: 'COMPLETE_TODO',
+    id,
+  }),
 
-    importantTodo: function(id){
-        return {
-            type : 'IMPORTANT_TODO',
-            id: id
-        }
-    },
+  importantTodo: id => ({
+    type: 'IMPORTANT_TODO',
+    id,
+  }),
 
-    deleteTodo: function(id){
-       return {
-            type : 'DELETE_TODO',
-            id: id
-       }
-    },
+  deleteTodo: id => ({
+    type: 'DELETE_TODO',
+    id,
+  }),
 
-    addCategory: function(text){
-        return {
-            type : "ADD_CATEGORY",
-            text: text
-        }
-    },
+  addCategory: text => ({
+    type: 'ADD_CATEGORY',
+    text,
+  }),
 
-    changeCategory: function(id){
-        return {
-            type : 'CHANGE_CATEGORY',
-            payload: id
-        }
-    },
+  changeCategory: id => ({
+    type: 'CHANGE_CATEGORY',
+    payload: id,
+  }),
 
-    deleteCategory: function(id){
-        return {
-            type : 'DELETE_CATEGORY',
-            id: id
-        }
-    },
-    
-    deleteCompleted:function(){
-        return {
-            type : 'DELETE_COMPLETED',
-        }
-    },
+  deleteCategory: id => ({
+    type: 'DELETE_CATEGORY',
+    id,
+  }),
 
-    handleCollapsed:function(){
-        return {
-            type : 'HANDLE_COLLAPSED',
-        }
-    }
-}
+  deleteCompleted: () => ({
+    type: 'DELETE_COMPLETED',
+  }),
 
-export default actions
+  handleCollapsed: () => ({
+    type: 'HANDLE_COLLAPSED',
+  }),
+};
+
+export default actions;

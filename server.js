@@ -1,15 +1,15 @@
-var express = require('express');
-var path = require('path');
-var config = require('./webpack.config.js');
-var webpack = require('webpack');
-var webpackDevMiddleware=require('webpack-dev-middleware');
-var webpackHotMiddleware=require('webpack-hot-middleware');
+const express = require('express');
+const path = require('path');
+const config = require('./webpack.config.js');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
-var port = process.env.PORT || 8080;
-var app = express();
+const port = process.env.PORT || 8080;
+const app = express();
 
-var compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, {noInfo: true,publicPath: config.output.publicPath}))
+const compiler = webpack(config);
+app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
 app.use(express.static(__dirname));
 
@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 //     res.sendFile(path.resolve('index.html'));
 // });
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 // var port = 3000;
 
@@ -26,4 +26,4 @@ app.get('*', (req, res) => {
 //   console.log("Express server listening on port", port);
 // });
 app.listen(port);
-console.log("Express server listening on port", port);
+// console.log("Express server listening on port", port);

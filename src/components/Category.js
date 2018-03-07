@@ -16,6 +16,11 @@ import actions from '../redux/actions';
 // const Category = createReactClass({
 
 class Category extends Component {
+  constructor(props) {
+    super(props);
+    this.handleCategory = this.handleCategory.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
   // changeTodo : function(e){
   //     this.props.onSelected( e.currentTarget.dataset.id);
   // },
@@ -46,11 +51,11 @@ class Category extends Component {
                 </g>
               </svg>
             </span>
-            <span className="title" data-id={i} onClick={this.handleCategory.bind(this)} >
+            <span role="presentation" className="title" data-id={i} onClick={this.handleCategory} >
               {item.name}
             </span>
             <span className="count"> {item.todos.length > 0 ? item.todos.length : ''} </span>
-            <button data-id={i} className={i === 0 ? 'hidden' : 'del'} onClick={this.handleDelete.bind(this)} >&#x2716;</button>
+            <button data-id={i} className={i === 0 ? 'hidden' : 'del'} onClick={this.handleDelete} >&#x2716;</button>
           </a>
         </li>
             );

@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import actions from '../redux/actions';
 
-const createReactClass = require('create-react-class');
 
-const CategoryInput = createReactClass({
-// class CategoryInput extends Component {
-  getInitialState() {
-    return {
+// const CategoryInput = createReactClass({
+class CategoryInput extends Component {
+  // getInitialState() {
+  //   return {
+  //     inputText: '',
+  //     editing: true,
+  //   };
+  // },
+  constructor(props) {
+    super(props);
+    this.state = {
       inputText: '',
       editing: true,
     };
-  },
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+  }
+
 
   handleChange(event) {
     this.setState({
       inputText: event.target.value,
     });
-  },
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -29,7 +39,7 @@ const CategoryInput = createReactClass({
         editing: true,
       });
     }
-  },
+  }
 
   handleEdit() {
     if (this.props.collapsed) {
@@ -43,14 +53,14 @@ const CategoryInput = createReactClass({
         editing: false,
       });
     }
-  },
+  }
 
   render() {
     if (this.state.editing) {
       return (
         <div className="sidebarItem categoryInput">
           {/* <button onClick={this.handleEdit}>Add a new category</button> */}
-          <a onClick={this.handleEdit}>
+          <a role="presentation" onClick={this.handleEdit}>
             <span className="list-icon"> <i className="fa fa-plus" /></span>
             <span className="title">Add a new category</span>
           </a>
@@ -66,6 +76,6 @@ const CategoryInput = createReactClass({
       );
     }
   }
-});
+}
 
 export default CategoryInput;

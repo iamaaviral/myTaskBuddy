@@ -13,7 +13,7 @@ class Filter extends Component {
               <span className="list-icon">
                 <i className="fa fa-sticky-note-o" />
               </span>
-              <span className="title" onClick={this.props.onFilter} value="SHOW_ALL">
+              <span role="presentation" className="title" onClick={this.props.onFilter} value="SHOW_ALL">
               ALL
               </span>
               <span className="count"> {this.props.todos.length} </span>
@@ -25,7 +25,7 @@ class Filter extends Component {
               <span className="list-icon">
                 <i className="fa fa-star" />
               </span>
-              <span className="title" onClick={this.props.onFilter} value="false">
+              <span role="presentation" className="title" onClick={this.props.onFilter} value="false">
           Important
               </span>
               <span className="count"> { this.props.todos.filter((todo) => { return todo.important; }).length > 0 ? this.props.todos.filter((todo) => { return todo.important; }).length : ''} </span>
@@ -37,7 +37,7 @@ class Filter extends Component {
               <span className="list-icon">
                 <i className="fa fa-calendar-check-o" />
               </span>
-              <span className="title" onClick={this.props.onFilter} value="true">
+              <span role="presentation" className="title" onClick={this.props.onFilter} value="true">
           Complete
               </span>
               <span className="count"> {this.props.todos.filter((todo) => { return todo.completed; }).length > 0 ? this.props.todos.filter((todo) => { return todo.completed; }).length : ''} </span>

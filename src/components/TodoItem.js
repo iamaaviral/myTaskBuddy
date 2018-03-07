@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import actions from '../redux/actions';
 
 class TodoItem extends Component {
+  constructor(props) {
+    super(props);
+    this.handleComplete = this.handleComplete.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleImportant = this.handleImportant.bind(this);
+  }
   handleComplete() {
     this.props.dispatch(actions.completeTodo(this.props.children.id));
   }
@@ -18,10 +24,10 @@ class TodoItem extends Component {
   render() {
     return (
       <li data-id={this.props.value} key={this.props.value} >
-        <span onClick={this.handleComplete.bind(this)} className={this.props.children.completed ? 'completed' : ''}>{this.props.children.text}</span>
+        <span role="presentation" onClick={this.handleComplete} className={this.props.children.completed ? 'completed' : ''}>{this.props.children.text}</span>
         <div className="btn">
-          <button className={this.props.children.important ? 'important' : 'imp'} onClick={this.handleImportant.bind(this)} > <i className="fa fa-star-o" /></button>
-          <button className="del" onClick={this.handleDelete.bind(this)} > <i className="fa fa-trash-o" /></button>
+          <button className={this.props.children.important ? 'important' : 'imp'} onClick={this.handleImportant} > <i className="fa fa-star-o" /></button>
+          <button className="del" onClick={this.handleDelete} > <i className="fa fa-trash-o" /></button>
         </div>
         {/* <i className="fa fa-trash" aria-hidden="true" onClick={this.handleDelete.bind(this) > */}
       </li>

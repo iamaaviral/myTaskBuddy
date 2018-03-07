@@ -137,7 +137,7 @@ class Login extends Component {
               version="v2.5"
               onClick={this.componentClicked}
               className="button btn-submit facebook-login"
-              buttonText="Login With Facebook" 
+              buttonText="Login With Facebook"
             />
           </div>
           <p>Forgot your Password? <a>Click Here</a></p>

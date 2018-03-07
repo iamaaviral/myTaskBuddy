@@ -13,6 +13,8 @@ class TextInput extends Component {
     this.state = {
       inputText: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
@@ -38,8 +40,8 @@ class TextInput extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input className="new-todo" type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange.bind(this)} />
+        <form onSubmit={this.handleSubmit}>
+          <input className="new-todo" type="text" placeholder="Enter your Task here" value={this.state.inputText} onChange={this.handleChange} />
           {/* <input type="Submit" /> */}
           {/* <TextDisplay text={this.state.inputText}/> */}
         </form>

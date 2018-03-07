@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import actions from '../redux/actions';
 
-const createReactClass = require('create-react-class');
+// const DeleteCompleted = createReactClass({
+class DeleteCompleted extends Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
 
-
-const DeleteCompleted = createReactClass({
-// class DeleteCompleted extends Component {
   handleDelete() {
     this.props.dispatch(actions.deleteCompleted());
-  },
+  }
   render() {
     return (
       <div className={this.props.filter[0].Status !== 'true' || this.props.todos.filter((todo) => { return todo.completed; }).length === 0 ? 'hidden' : 'deleteCompleted btn hover'}>
@@ -16,6 +18,6 @@ const DeleteCompleted = createReactClass({
       </div>
     );
   }
-});
+}
 
 export default DeleteCompleted;

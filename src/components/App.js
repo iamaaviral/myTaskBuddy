@@ -13,6 +13,11 @@ import DeleteCompleted from './DeleteCompletedButton';
 
 // class App extends Component
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.filterItem = this.filterItem.bind(this);
+  }
+
   filterItem(event) {
     // var x = document.getElementsByTagName("span")
     // console.log( event.target.getAttribute("value"));
@@ -32,7 +37,7 @@ class App extends Component {
         <div id="app">
           <div className={this.props.collapsed ? 'left-side-bar collapsed' : 'left-side-bar'}>
             <div className="lists-scroll">
-              <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem.bind(this)} filter={this.props.filter} />
+              <Filter dispatch={this.props.dispatch} todos={this.props.Todo[this.props.selectedCategory].todos} onFilter={this.filterItem} filter={this.props.filter} />
               <Category dispatch={this.props.dispatch} selectedID={this.props.selectedCategory} todos={this.props.Todo} />
               <CategoryInput dispatch={this.props.dispatch} collapsed={this.props.collapsed} />
             </div>

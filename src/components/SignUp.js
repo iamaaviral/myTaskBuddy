@@ -198,7 +198,7 @@ class SignUp extends Component {
             <div className="error" id="passwordError" />
           </div>
           <div className="btn-box">
-            <button className="button btn-submit"  onClick={e => this.onSubmit(e)} type="submit">Sign Up</button>
+            <button className="button btn-submit" onClick={e => this.onSubmit(e)} type="submit">Sign Up</button>
             <FacebookLogin
               socialId="158761201565558"
               language="en_US"

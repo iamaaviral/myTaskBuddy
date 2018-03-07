@@ -36,6 +36,9 @@ class List extends Component {
         break;
       case 'true':
         allitems = allitems.filter(t => t.completed);
+        break;
+      default:
+        break;
     }
     return <ul>{allitems.map(createItem, this)}</ul>;
   }

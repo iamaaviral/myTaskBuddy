@@ -13,7 +13,7 @@ class Login extends Component {
     };
     this.login = this.login.bind(this);
     this.change = this.change.bind(this);
-    this.componentClicked = this.componentClicked.bind(this);
+    this.responseFacebook = this.responseFacebook.bind(this);
   }
 
 
@@ -81,11 +81,7 @@ class Login extends Component {
   responseFacebook(response) {
     // console.log(response);
     // anything else you want to do(save to localStorage)...
-    const resFace = response;
-    this.componentClicked(resFace);
-  }
-
-  componentClicked(res) {
+    const res = response;
     if (res.email) {
       this.setState({ username: res.email });
     }

@@ -20,7 +20,7 @@ class SignUp extends Component {
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.change = this.change.bind(this);
-    this.componentClicked = this.componentClicked.bind(this);
+    this.responseFacebook = this.responseFacebook.bind(this);
   }
 
   // change(e) {
@@ -107,11 +107,7 @@ class SignUp extends Component {
   responseFacebook(response) {
     // console.log(response);
     // anything else you want to do(save to localStorage)...
-    const resFace = response;
-    this.componentClicked(resFace);
-  }
-
-  componentClicked(res) {
+    const res = response;
     const firstName = res.name.split(' ').slice(0, -1).join(' ');
     const lastName = res.name.split(' ').slice(-1).join(' ');
     if (res.email) {
@@ -207,7 +203,7 @@ class SignUp extends Component {
               xfbml={true}
               fields="id,email,name"
               version="v2.5"
-              onClick={this.componentClicked}
+              // onClick={this.componentClicked}
               className="button btn-submit facebook-login"
               buttonText="Login With Facebook"
             />
